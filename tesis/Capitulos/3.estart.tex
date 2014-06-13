@@ -1,0 +1,85 @@
+\chapter{Estado del arte}
+\label{chap:estart}
+Desde hace tiempo se ha investigado en el \'area de reconocimiento de patrones ya sea en imagen o audio, y durante los \'ultimos a\~nos se han desarrollado tecnolog\'ias que la aprovechan, como c\'amaras con detecci\'on de rostros o asistentes personales con procesamiento de lenguaje natural. Cualquier aplicaci\'on de \'esta en la tecnolog\'ia se basa en el mismo principio, buscar caracter\'isticas de inter\'es y procesarlas hasta que pueda ser clasificada.
+
+\section{Revisi\'on de trabajos relacionados}
+En cuanto a se\~nales de audio, siempre se trata de buscar aspectos de la onda que sean comunes como por ejemplo tratar de encontrar repeticiones en la pista. Cuando se habla de reconocimiento de patrones sonoros en pistas musicales significa procesar una o varias se\~nales tratando de visualizar zonas en la pista que sean de inter\'es, como las frecuencias de los bajos o de las percusiones que generalmente describen el tempo. 
+\subsection{Detecci\'on de tempo}
+Gran parte del proyecto que se aborda consiste en realizar b\'usqueda de aspectos r\'itmicos como el tempo, con los que se pretende hacer comparaciones entre pistas y estimar posiciones de tiempo que sean similares entre \'estas.
+
+\noindent Un ejemplo es el de \citet{beatTrack}; en su trabajo presentan un algoritmo de estimaci\'on de tempo y seguimiento r\'itmico mediante la separaci\'on percusivo/arm\'onica de la se\~nal de audio para filtrar caracter\'isticas de cada componente de la pista. La estimaci\'on r\'itmica se logra a partir de los picos tomados de la respuesta de un resonador con los cuales se hace una predicci\'on de ritmo con la cual se deduce la pulsaci\'on.
+
+\noindent Una forma de detectar el tempo es mediante la b\'usqueda de repeticiones r\'itmicas donde \citet{quadMusic} presentan sus matrices de autosimilitud, las cuales son \'utiles para encontrar patrones semejantes y contrastantes en una melod\'ia. Las matrices son creadas por caracter\'isticas extraidas de piezas musicales a varias escalas de tiempo para representar la notaci\'on musical. Postulan que el peso \'optimo de los componentes de la anotaci\'on pueden indicar caracter\'isticas que puedan ser candidatas en una anotaci\'on musical real.
+
+\noindent \citet{swingBeat} propone m\'etodos de estimaci\'on de tempo como el an\'alisis transitorio el cual consiste en analizar por separado segmentos de frecuencias cuando incrementan de forma brusca, esto con la finalidad de detectar percusiones o bajos, o bien detectar cambios r\'apidos de espectro en la se\~nal. Todo esto suponiendo que se trata de una pista con un ritmo constante.
+
+\noindent Por otra parte \citet{perceptTempo} presentan el problema del reconocimiento de tempo como un problema de clasificaci\'on estad\'istica. Definen cuatro clases de tempo basadas en la percepci\'on humana y no en detecci\'on de repetici\'ones pues no descubren el ritmo como tal. Sus clases se definen como: muy lentos, lentos, r\'apidos y muy r\'apidos, dependiendo de la cantidad de pulsos por minuto en una pista. Clasifican el tempo de un sonido usando se\~nales monof\'onicas analizadas en ventanas de tiempo de 30 milisegundos y despu\'es combin\'andolas en grupos de cuatro fragmentos. Un vector final de 128 elementos que consiste en el promedio y varianza de cada grupo es analizado para su posterior clasificaci\'on.
+
+\noindent \citet{tempoMP3} proponen un sistema de detecci\'on de tempo distinto a lo general exclusivo para archivos en formato MP3\footnote{MPEG-2 Audio Layer III o MP3 es un formato de audio com\'un usado para m\'usica tanto en computadoras como en reproductores de audio.} \cite{rfc3003} ya que se basa en la caracter\'istica de \'estos en almacenar cambios en forma de {\em transformadas de coseno}\footnote{La {\em transformada discreta de coseno} es una transformada basada en la transformada de Fourier discreta, pero utilizando únicamente números reales.} discretas modificadas. \'Esta utiliza un patron de cambio de ventana que hace referencia a cambios en la onda y se encuentra alineada con la tabla de percusiones. No hay an\'alisis de frecuencia, sino que utilizan el patron obtenido de esta l\'inea y un {\em metr\'onomo}.
+
+\noindent Otro sistema propuesto es el de \citet{realtimeTempo} quien realiza un an\'alisis de autocorrelaci\'on envolvente para una se\~nal con la que despu\'es crea una funci\'on ponderada basada en la autocorrelaci\'on para estimar el tempo de una pista. Todo calculado por las amplitudes pico y las posiciones de la autocorrelaci\'on en tiempo real. Con ello se estima una aproximaci\'on de lo que un humano escucha e interpreta como ritmo en una pista.
+
+\noindent Por \'ultimo se menciona el trabajo de \citet{rhythmRep} quienes utilizan algoritmos de an\'alisis de informaci\'on de tempo y almacenamiento en bases de datos via aprendizaje autom\'atico. Ellos incluyen informaci\'on conocida de los ritmos existentes para aumentar el desempe\~no de sus algoritmos. A su finalizaci\'on comparan los resultados con una base de datos musical. Al descomponer una pieza en varios fragmentos hacen una evaluaci\'on utilizando informaci\'on existente sobre el ritmo comparando y tratando de acertar tiempos en los que hay picos en la onda. Todo funciona como un {\em mecanismo no supervisado}\footnote{El {\em aprendizaje no supervisado} es un método de aprendizaje autom\'atico donde un modelo es ajustado a las observaciones. Se distingue del aprendizaje supervisado por el hecho de que no hay un conocimiento a priori.} que busca patrones espectrales en las frecuencias que coincidan con la informaci\'on proporcionada.
+
+\subsection{Aplicaciones con el tempo}
+
+Una vez que se tiene la informaci\'on de un tempo aproximado, se puede buscar caracter\'isticas en los sonidos que nos permiten generar aplicaciones de todo tipo como generadores de listas de reproducci\'on basadas en el estado de \'animo, generadores de {\em tonos musicales}\footnote{El {\em tono musical} es la unidad b\'asica de composici\'on musical.} o mezcladores autom\'aticos. La meta del proyecto es conseguir generar un sistema que logre mezclar dos sonidos de tal manera que no sea perceptible el cambio entre ellos, o que por lo menos sea un a transici\'on coherente entre pistas.
+
+\noindent Una aplicaci\'on ser\'ia como la que proponen \citet{autoChord} que b\'asicamente es un sistema que reconoce acordes de una pista musical y los clasifica. Analizan pistas musicales en busca de regiones espectrales con diferentes intensidades mediante el uso de filtros para detectar los tonos. Cada tono es clasificado dependiendo de su frecuencia y {\em escala musical}\footnote{La {\em escala musical} es la susesi\'on ordenada de todas las notas de un entorno musical.}.
+
+\noindent La propuesta de \citet{autoRingtone} consiste en un sistema capaz de generar un tono de llamada ({\em ringtone} en ingl\'es) de cualquier canci\'on popular. Su m\'etodo consiste en localizar las \'areas repetitivas de una canci\'on pues \'estas son las que generalmente atraen la atenci\'on de una persona, despu\'es localizan los vocales y comparando con la posici\'on y el tempo estiman un tiempo de inicio y un tiempo de final, todo lo anterior bas\'andose en reglas {\em heur\'isticas}\footnote{Las reglas {\em heur\'isticas} se basan en la utilizaci\'on de reglas emp\'iricas para llegar a una soluci\'on.}. El sistema puede dar una o varias respuestas dependiendo de la pista.
+
+\noindent Los {\em covers} o versiones\footnote{Un {\em cover} o versi\'on es la interpretaci\'on de una canci\'on grabada por otro artista.} se han vuelto algo com\'un en la red. \citet{coverRec} proponen una t\'ecnica para detectar si realmente una pista de audio se trata de un cover. Utilizando {\em cromas} o {\em llaves de color} comparando el contenido original con el cover, y analizando las diferencias entre ambos creando se\~nales en ciertas posiciones cr\'iticas. El resultado muestra posiciones desiguales para una pista que es un cover y posiciones similares para aquellas que usan contenido original.
+
+\noindent El trabajo de \citet{segPopularMusic} muestra un framework para extraer tonos y segmentos de m\'usica popular, todo completamente sin supervisar. Obteniendo posiciones de un cromagrama usando una mezcla infinita Gaussiana, con las posiciones se extraen series de tiempo de tonos. Con los tonos transforman las posiciones en secuencias de tiempo. Con ambos se construye una cola multidimensional con la que se obtiene un ``ritmo arm\'onico''.
+
+\noindent \citet{svrMusic} proponen un sistema de recomendaciones musicales basadas en contexto. Incluye extracci\'on de caracter\'isticas, clasificaci\'on de humor musical y predicci\'on de emociones humanas. Mediante el uso de {\em regresi\'on}\footnote{El {\em an\'alisis de regresi\'on} es un proceso estad\'istico para la estimaci\'on de las relaciones entre variables.} de {\em vectores de soporte}\footnote{Las {\em m\'aquinas de soporte vectorial} son t\'ecnicas de clasificaci\'on y de gran desempe\~no, comparadas con t\'ecnicas cl\'asicas.} se clasifica el humor musical obteniendo un 87.8\% de precisi\'on.
+
+\noindent \citet{tempoSearch} presentan su ``Motor de B\'usqueda Musical Sensitivo al Tempo'', con aplicaciones terap\'euticas y de bienestar. Incluye seis modos de interacci\'on: b\'usqueda por n\'umero, b\'usqueda por aplausos, b\'usqueda por deslice de tempo, b\'usqueda por toque de pantalla, b\'usqueda por audio de muestra y b\'usqueda por caminata. Para la b\'usqueda por caminata se obtiene informaci\'on del aceler\'ometro para buscar m\'usica con tempo similar al ritmo de caminata y sincroniza la pista con el ritmo que se lleva caminando.
+
+\noindent \citet{becker2010automatic} presentan una patente que consiste en un reproductor multimedia interactivo capaz de reconocer el tempo en una canci\'on. Es capaz de reproducir una pieza musical y extraer fragmentos que se pueden combinar en una nueva mezcla. La informaci\'on musical es obtenida de los discos musicales.
+
+\noindent Por \'ultimo \citet{herberger2011system} muestran en su patente un sistema que analiza el sonido y busca por el tempo estimado de una canci\'on reproducida a trav\'es de cualquier dispositivo mediante un micr\'ofono. El usuario puede presionar las teclas para generar un tempo constante y alimentar al sistema.
+
+\section{An\'alisis comparativo}
+Los anteriores trabajos presentan caracter\'isticas muy similares al proyecto que se plantea en esta tesis. En el cuadro \ref{table:comparativa} se realiza una comparaci\'on entre los trabajos seleccionados con mayor relaci\'on al proyecto.
+
+\noindent Los criterios que se eval\'uan son los siguientes:
+\begin{description}
+	\item[Procesamiento de se\~nales.]{La inclusi\'on de alg\'un m\'etodo de procesamiento de se\~nales.}
+	\item[Detecci\'on r\'itmica.]{Es la detecci\'on de alguna caracter\'istica que defina un ritmo.}
+	\item[Clasificador de patrones.]{Se eval\'ua la capacidad de identificar un tipo de patr\'on.}
+	\item[Procesado en tiempo real.]{Capacidad de realizar el trabajo de procesamiento mientras se reproduce el contenido analizado.}
+	\item[Datos preprocesados.]{La necesidad de utilizar datos que contengan informaci\'on sobre el contenido a analizar.}
+	\item[Listas de reproducci\'on autogeneradas.]{Es la capacidad de generar listas de reproducci\'on basadas en los datos de procesamiento.}
+	\item[Mezcla inteligente de audio.]{Es la capacidad de generar mezclas de audio en base a los datos de procesamiento.}
+\end{description}
+
+\noindent El proyecto planteado potencialmente cumple con los criterios de evaluaci\'on, ya que se generaron en base a \'este. Los diez trabajos que se muestran en el cuadro se seleccionaron pensando tambi\'en en el proyecto y descartando aquellos cuya implementaci\'on es muy similar a alguna otra o su idea no est\'a del todo relacionada con el proyecto.
+
+\noindent Los trabajos de \citet{quadMusic} y de \citet{swingBeat} comparten las mismas caracter\'isticas; ambos realizan un procesamiento de se\~nales y una detecci\'on r\'itmica. El trabajo de \citet{realtimeTempo} presenta las mismas caracter\'isticas con la diferencia de que el procesamiento se hace en tiempo real. Estos trabajos solo muestran los algor\'itmos necesarios para llegar a una aproximaci\'on y no la implementaci\'on en alg\'un proyecto.
+
+\noindent En los trabajos de \citet{autoRingtone} y de \citet{segPopularMusic} se implementa un clasificador de patrones para separar las velocidades de tempo en una pista, de forma similar el trabajo de \citet{perceptTempo} que adem\'as de que implementa un simulador de listas de reproducci\'on que muestra posibilidades de listas basadas en la clasificaci\'on previa.
+
+\noindent En el trabajo de \citet{tempoMP3} no se procesan se\~nales del todo, la mayor parte de su an\'alisis lo basan el una estructura exclusiva de los archivos MP3 que muestra tener caracter\'isticas propias de un ritmo espec\'ifico.
+
+\noindent El trabajo realizado por \citet{coverRec} presenta un procesamiento de se\~nales b\'asico necesario para comparar con datos previamente procesados, donde buscan diferencias en algunos aspectos para identificar si una pista de audio es una interpretaci\'on o es contenido original.
+
+\noindent \citet{tempoSearch} no realizan un procesamiento de se\~nales para su trabajo, solo detectan un ritmo por medio de una entrada de informaci\'on y buscan pistas de audio que tengan ritmos similares, tambi\'en genera listas de reproducci\'on de forma aut\'onoma y es capaz de realizar mezclas de sonido, todo en base a datos preprocesados.
+
+\noindent \citet{becker2010automatic} no realizan una clasificaci\'on de patrones ni generaci\'on de listas de reproducci\'on pero logran una mezcla automatizada de audio sin datos preprocesados, lo hacen directamente con una detecci\'on de ritmo. En este trabajo s\'i se realiza un procesamiento de se\~nales en tiempo real.
+
+\section{Sistema propuesto}
+Las caracter\'isticas evaluadas anteriormente fueron seleccionadas espec\'ificamente para que concuerden con las caracter\'isticas principales del sistema propuesto.
+
+\noindent El sistema es capaz de procesar se\~nales provenientes de los archivos de sonido. Transformando los datos de la pista en datos num\'ericos comparables con los que se analizan caracter\'isticas del sonido. Una de ellas es el ritmo de la pista; en este \'ambito el ritmo no describe el tipo de m\'usica, sino la informaci\'on sobre el tempo de la pista.
+
+\noindent Tambi\'en se propone la capacidad de clasificar los datos de la pista. Las clasificaciones indican que parte de los datos pertenecen al inicio y final de una pista. Estos son los que sufrir\'an cambios. Otra de las indicaciones es la disponibilidad entre pistas para crear o no una modificaci\'on; entre ciertas pistas no habr\'a necesidad de crear transiciones entre inicio y final correspondiente si estos son similares en tempo, de lo contrario, se buscar\'ia un tempo entre inicio y final que sea similar para crear una transici\'on.
+
+\begin{landscape}
+\input{./Cuadros/1.trabrel}
+\end{landscape}
+
+\noindent Una peque\~na parte del tiempo se realiza un procesamiento en tiempo real; Èste sirve para obtener los datos necesarios a ser analizados mientras se reproduce una pista. Estos datos preprocesados se guardan en un archivo de texto que sirve como base de datos para realizar comparaciones entre la pista entrante y la saliente. El an\'alisis consiste en comparar los datos de varios archivos con el actual y encontrar la mejor opci\'on de acuerdo a la pista actual.
+
+\noindent La autogeneraci\'on de listas de reproducci\'on y la mezcla inteligente de audio son las caracter\'isticas principales de acuerdo con el objetivo de la tesis. Realizando comparaciones entre los datos preprocesados se puede generar una lista de reproducci\'on. La mezcla inteligente funciona de manera similar; se comparan los datos entre una pista y otra mientras se reproduce la primera de ellas y entre el inicio y final se produce una transici\'on con la intenci\'on de suavizar la pausa entre pistas.

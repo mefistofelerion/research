@@ -1,0 +1,189 @@
+\begin{thebibliography}{24}
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Baher(1990)}]{Baher}
+Hussein Baher.
+\newblock \emph{Analog and Digital Signal Processing}.
+\newblock John Wiley \& Sons, Inc., Nueva York, NY, EE. UU., 1990.
+\newblock ISBN 978-0-471-92342-8.
+
+\bibitem[{Becker et~al.(2010)Becker, Holl, Kurz, Diepstraten, y
+  Haver}]{becker2010automatic}
+Friedemann Becker, Thomas Holl, Michael Kurz, Toine Diepstraten y Daniel Haver.
+\newblock Automatic recognition and matching of tempo and phase of pieces of
+  music, and an interactive music player.
+\newblock 2010.
+\newblock US Patent App. 12/565,766.
+
+\bibitem[{Bertin-Mahieux y Ellis(2011)}]{coverRec}
+Thierry Bertin-Mahieux y Daniel Ellis.
+\newblock Large-scale cover song recognition using hashed chroma landmarks.
+\newblock En \emph{Proceedings of the 2011 {IEEE} Workshop on Applications of
+  Signal Processing to Audio and Acoustics}, p\'ags 117--120. IEEE, Washington,
+  DC, EE. UU., 2011.
+\newblock \doi{10.1109/ASPAA.2011.6082307}.
+
+\bibitem[{Chen et~al.(2009)Chen, Lee, y Wu}]{perceptTempo}
+Ching-Wei Chen, Kyogu Lee y Ho-Hsiang Wu.
+\newblock Towards a class-based representation of perceptual tempo for music
+  retrieval.
+\newblock En \emph{Proceedings of the 2009 International Conference on Machine
+  Learning and Applications}, p\'ags 602--607. IEEE, Washington, DC, EE. UU.,
+  2009.
+\newblock \doi{10.1109/ICMLA.2009.54}.
+
+\bibitem[{Cu{\'e}llar y Izaguirre(2008)}]{izaguirre2008sistemas}
+Armando~Astarloa Cu{\'e}llar y Aitzol~Zuloaga Izaguirre.
+\newblock \emph{Sistemas de procesamiento digital}.
+\newblock Delta Publicaciones, Madrid, Espa\~na, 2008.
+\newblock ISBN 978-84-92453-03-0.
+
+\bibitem[{D'Aguanno y Vercellesi(2007)}]{tempoMP3}
+Antonello D'Aguanno y Giancarlo Vercellesi.
+\newblock Tempo induction algorithm in {MP3} compressed domain.
+\newblock En \emph{Proceedings of the International Workshop on Workshop on
+  Multimedia Information Retrieval}, MIR '07, p\'ags 153--158. ACM, Nueva York,
+  NY, EE. UU., 2007.
+\newblock \doi{10.1145/1290082.1290105}.
+
+\bibitem[{Gkiokas et~al.(2012)Gkiokas, Katsouros, Carayannis, y
+  Stafylakis}]{beatTrack}
+Alexandros Gkiokas, Vassilis Katsouros, Elias~G. Carayannis y Themos
+  Stafylakis.
+\newblock Music tempo estimation and beat tracking by applying source
+  separation and metrical relations.
+\newblock En \emph{Proceedings of the 2012 {IEEE} Workshop on Acoustics, Speech
+  and Signal Processing}, p\'ags 421--424. IEEE, Washington, DC, EE. UU., 2012.
+\newblock \doi{10.1109/ICASSP.2012.6287906}.
+
+\bibitem[{Gulati y Rao(2010)}]{rhythmRep}
+Sankalp Gulati y Preeti Rao.
+\newblock Rhythm pattern representations for tempo detection in music.
+\newblock En \emph{Proceedings of the 1st International Conference on
+  Intelligent Interactive Technologies and Multimedia}, IITM '10, p\'ags
+  241--244. ACM, Nueva York, NY, EE. UU., 2010.
+\newblock \doi{10.1145/1963564.1963606}.
+
+\bibitem[{Herberger et~al.(2011)Herberger, Tost, y
+  Flemming}]{herberger2011system}
+Tilman Herberger, Titus Tost y Georg Flemming.
+\newblock System and method of bpm determination.
+\newblock 2011.
+\newblock EP Patent 1,377,959.
+
+\bibitem[{Hu(2010)}]{realtimeTempo}
+Jianling Hu.
+\newblock Real-time perceptual tempo estimation for music signal based on
+  envelope autocorrelation.
+\newblock En \emph{Proceedings of the Wireless 2010 International Conference on
+  Communications and Signal Processing}, p\'ags 1--4. IEEE, Washington, DC, EE.
+  UU., 2010.
+\newblock \doi{10.1109/WCSP.2010.5633730}.
+
+\bibitem[{Jain et~al.(2000)Jain, Duin, y Mao}]{Anil}
+Anil~K. Jain, Robert P.~W. Duin y Jianchang Mao.
+\newblock Statistical pattern recognition: A review.
+\newblock \emph{{IEEE} Transactions on Pattern Analysis and Machine
+  Intelligence}, 22(1):4--37, 2000.
+
+\bibitem[{Kittler(2002)}]{Kittler}
+Josef Kittler.
+\newblock Modelo de sistema de reconocimiento de patrones.
+\newblock En \emph{Notas del seminario de Reconocimiento de Patrones de Grupo
+  de Tratamiento de Im{\'a}genes del Instituto de Ingenier{\'\i}a
+  El{\'e}ctrica, basado en las notas del curso del Prof. J. Kittler en la Univ.
+  de Surrey}, p\'ags 1--5. 2002.
+
+\bibitem[{Laroche(2001)}]{swingBeat}
+Jean Laroche.
+\newblock Estimating tempo, swing and beat locations in audio recordings.
+\newblock En \emph{Proceedings of the 2011 {IEEE} Workshop on Applications of
+  Signal Processing to Audio and Acoustics}, p\'ags 135--138. IEEE, Washington,
+  DC, EE. UU., 2001.
+\newblock \doi{10.1109/ASPAA.2001.969561}.
+
+\bibitem[{Morman y Rabiner(2006)}]{autoChord}
+Joshua Morman y Lawrence Rabiner.
+\newblock A system for the automatic segmentation and classification of chord
+  sequences.
+\newblock En \emph{Proceedings of the 1st ACM Workshop on Audio and Music
+  Computing Multimedia}, AMCMM '06, p\'ags 1--10. ACM, Nueva York, NY, EE. UU.,
+  2006.
+\newblock \doi{10.1145/1178723.1178725}.
+
+\bibitem[{Nilsson(2000)}]{rfc3003}
+Martin Nilsson.
+\newblock The audio/mpeg media type.
+\newblock RFC 3003, IETF Secretariat, 2000.
+
+\bibitem[{Rho et~al.(2009)Rho, Han, y Hwang}]{svrMusic}
+Seungmin Rho, Byeong-jun Han y Eenjun Hwang.
+\newblock Svr-based music mood classification and context-based music
+  recommendation.
+\newblock En \emph{Proceedings of the 17th ACM International Conference on
+  Multimedia}, MM '09, p\'ags 713--716. ACM, Nueva York, NY, EE. UU., 2009.
+\newblock \doi{10.1145/1631272.1631395}.
+
+\bibitem[{Rocchesso(2004)}]{Davide}
+Davide Rocchesso.
+\newblock \emph{Introduction to Sound Processing}.
+\newblock Associazione Culturale Mondo Estremo, Verona, Italia, 2004.
+\newblock ISBN 978-88-901126-1-4.
+
+\bibitem[{Smith y Chew(2013)}]{quadMusic}
+Jordan~B.L. Smith y Elaine Chew.
+\newblock Using quadratic programming to estimate feature relevance in
+  structural analyses of music.
+\newblock En \emph{Proceedings of the 21st ACM International Conference on
+  Multimedia}, MM '13, p\'ags 113--122. ACM, Nueva York, NY, EE. UU., 2013.
+\newblock \doi{10.1145/2502081.2502124}.
+
+\bibitem[{Smith(1997)}]{StevenAudio}
+Steven~W. Smith.
+\newblock \emph{The Scientist and Engineer's Guide to Digital Signal
+  Processing}.
+\newblock California Technical Publishing, San Diego, CA, EE. UU., 1997.
+\newblock ISBN 978-0-9660176-3-2.
+
+\bibitem[{Walker(1996)}]{walker1996fast}
+James~S. Walker.
+\newblock \emph{Fast Fourier Transforms, Second Edition}.
+\newblock Studies in Advanced Mathematics. Taylor \& Francis, Abingdon, Oxford,
+  Reino Unido, 1996.
+\newblock ISBN 978-0-849-37163-9.
+
+\bibitem[{Wang(2013)}]{segPopularMusic}
+Yun-Sheng Wang.
+\newblock Toward segmentation of popular music.
+\newblock En \emph{Proceedings of the 3rd ACM Conference on International
+  Conference on Multimedia Retrieval}, ICMR '13, p\'ags 345--348. ACM, Nueva
+  York, NY, EE. UU., 2013.
+\newblock \doi{10.1145/2461466.2461534}.
+
+\bibitem[{Watanabe(1985)}]{Satosi}
+Satosi Watanabe.
+\newblock \emph{Pattern Recognition: Human and Mechanical}.
+\newblock Wiley, Nueva York, NY, EE. UU., 1985.
+\newblock ISBN 978-0-471-80815-2.
+
+\bibitem[{Yi et~al.(2011)Yi, Zhou, y Wang}]{tempoSearch}
+Yu~Yi, Yinsheng Zhou y Ye~Wang.
+\newblock A tempo-sensitive music search engine with multimodal inputs.
+\newblock En \emph{Proceedings of the 1st International ACM Workshop on Music
+  Information Retrieval with User-centered and Multimodal Strategies}, MIRUM
+  '11, p\'ags 13--18. ACM, Nueva York, NY, EE. UU., 2011.
+\newblock \doi{10.1145/2072529.2072533}.
+
+\bibitem[{Zhang et~al.(2009)Zhang, Fong, Xiao, y Zhou}]{autoRingtone}
+Tong Zhang, Chee~Keat Fong, Linxing Xiao y Jie Zhou.
+\newblock Automatic and instant ring tone generation based on music structure
+  analysis.
+\newblock En \emph{Proceedings of the 17th ACM International Conference on
+  Multimedia}, MM '09, p\'ags 593--596. ACM, Nueva York, NY, EE. UU., 2009.
+\newblock \doi{10.1145/1631272.1631364}.
+
+\end{thebibliography}

@@ -1,0 +1,36 @@
+\chapter{Conclusiones}
+\label{chap:conc}
+\porHacer{Este cap\'itulo necesita datos de la evaluaci\'on, por lo tanto está sujeto a cambios dependiendo de los resultados. Se marca en rojo lo que tenga m\'as probabilidad de ser cambiado.}
+
+Durante el desarrollo de este proyecto se present\'o un software con la capacidad de analizar pistas de audio para obtener informaci\'on del ritmo y de esa manera generar listas de reproducci\'on basadas en tal caracter\'istica. La finalidad de la herramienta es brindar una mejor experiencia de reproducci\'on musical para el usuario.
+
+\noindent Se implementaron m\'etodos de an\'alisis de se\~nales y detecci\'on de patrones, los cuales permiten detectar la velocidad del ritmo e inicio y final de pista con los que se generan listas de reproducci\'on de forma autom\'atica.
+
+\noindent Para producir una mejor experiencia de reproducci\'on musical se implementaron efectos de transici\'on entre pistas; entre dos pistas se calcula un momento temporal en el que los ritmos son similares, se aplica un efecto de difuminaci\'on en la primera pista que disminuye su potencia, mientras la segunda pista la aumenta con un efecto similar.
+
+\noindent El desarrollo principal se realiz\'o en el lenguaje de programaci\'on {\sc Python} mientras que algunas rutinas de procesamiento se realizaron en el lenguaje de programaci\'on {\sc Java} debido a la carga algor\'itmica.
+
+\section{Discusi\'on}
+
+El prototipo de software desarrollado demuestra que sus resultados son favorables en cuanto a su objetivo, de acuerdo con los usuarios que lo probaron. La generaci\'on de listas respeta el ritmo de las pistas y se crea una lista con una suceci\'on l\'ogica de pistas.
+
+%\porHacer{(ALT) El prototipo de software desarrollado demuestra que sus resultados son inexactos ya que no cumplen con el objetivo, de acuerdo con los usuarios que lo probaron. La generaci\'on de listas es inexacta y no respeta el ritmo en la mayor\'ia de las veces.}
+
+\noindent \porHacer{Aunque las transiciones entre pistas son efectos que intentan mejorar la experiencia del usuario, no a todos les convence esta caracter\'istica, algunos usuarios prefirieron desactivar la caracter\'istica, a otros usuarios les agrad\'o la idea pero piensan que se puede mejorar la detecci\'on del tiempo correcto en que se debe realizar.}% (Es probable que no a todos les guste esta caracter\'istica, se definir\'a despues de semana santa)}
+
+\noindent De acuerdo con los usuarios, la interfaz no est\'a muy elaborada, pero es sencilla de utilizar pues sus controles se reconocen a simple vista y sus opciones se pueden identificar unas de otras facilmente.
+
+\noindent Aunque los resultados de ejecuci\'on del software son los esperados, existen problemas de velocidad de procesamiento que causan conflictos entre los hilos del software; el procesamiento en tiempo real se vuelve muy pesado en funci\'on al n\'umero de archivos de sonido en un directorio. Debido a que la restricci\'on de tiempo se define por la duraci\'on de la pista actual, un alternativa viable a la ejecuci\'on en tiempo real de este procesamiento es ejecutar esta rutina como un servicio transparente al usuario que constantemente analiza los archivos y genera listas de reproducci\'on de acuerdo a los parametros definidos por el usuario.
+
+\noindent El software necesita una gr\'an cantidad de recursos para ejecutarse, esto es debido a que el manejo de hilos no es lo m\'as eficiente posible, adem\'as existe una probabilidad de que las rutinas se pausen temporalmente, lo que genera una peque\~na p\'erdida de datos que podr\'ia generar cambios en los resultados. Lo mejor en este caso ser\'ia reescribir las rutinas utilizando m\'etodos m\'as eficientes.
+
+\section{Trabajo a futuro}
+Definitivamente hay mucho trabajo por hacer para lograr tener un producto completamente funcional y que est\'e en condiciones de hacerlo p\'ublico. \porHacer{Aunque los experimentos no muestran los resultados m\'as favorables,} se trata de un prototipo que demuestra un buen funcionamiento que puede mejorar en varios aspectos.
+
+\noindent Los cambios inmediatos en el software ser\'ian cosas internas, como mejorar los algoritmos y rutinas en general. Agregar nuevas funciones de acuerdo a las tendencias actuales que hagan m\'as atractiva la idea de este software y agregar opciones de personalizaci\'on. Tambien trabajar en una interfaz gr\'afica m\'as elaborada que sea amigable para el usuario.
+
+\noindent Lo mejor ser\'a cambiar el lenguaje de programaci\'on, ya que {\sc Python} no ofrece el desempe–o buscado para este tipo de programas. Probablemente la implementaci\'on completa se haga en {\sc C/C++} o {\sc Java}.
+
+\noindent Para el futuro se podr\'ia trabajar en una versi\'on m\'ovil o probablemente web; ya que las tendencias indican que en el futuro las personas preferir\'an almacenar sus archivos en la nube o usar servicios de reproducci\'on musical en linea.
+
+\newpage

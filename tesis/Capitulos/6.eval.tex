@@ -1,0 +1,120 @@
+\chapter{Evaluaci\'on}
+\label{chap:eval}
+%\porHacer{La evaluaci\'on est\'a en proceso. Algunos experimentos podr\'ian cambiar. (2 semanas desde hoy aprox.)}
+
+Para un completo desarrollo de software es necesario realizar pruebas de software, con los cuales es posible detectar errores, defectos o vulnerabilidades que se pueden reparar para ofrecer un mejor funcionamiento. En este caso se realizan dos tipos de pruebas; las pruebas de rendimiento, que consisten en pruebas que se ejecutan por si solas y que arrojan un resultado cuantificable y pruebas con usuarios, en las cuales se les pide a los usuarios realizar ciertas acciones con el programa y evaluar tales acciones.
+
+\section{Dise\~no experimental}
+Para el funcionamiento adecuado del software se utilizaron varios m\'etodos que logran un flujo ininterrumpido pero que requieren m\'as recursos. Para evaluar el rendimiento del software bajo \'estas circunstancias, se toman en cuenta los siguientes criterios: 
+\begin{description}
+\item [Velocidad de procesamiento]{Se eval\'ua la velocidad que el software necesita para realizar las operaciones necesarias. Dependiendo de la plataforma y el hardware en que se ejecuta el software podr\'ian existir diferencias de velocidad.}
+\item [Precisi\'on algor\'itmica]{El software genera datos en base a informaci\'on obtenida del procesamiento. La modificaci\'on de uno o varios par\'ametros en los algoritmos genera datos distintos. En este caso se eval\'uan las condiciones en las que opera el software y que tan precisos son los datos generados.}
+\item [Eficiencia de ejecuci\'on]{El procesamiento, an\'alisis y reproducci\'on trabajan en tiempo real, representan una carga de memoria. Para este criterio se eval\'ua la eficiencia en que trabaja el software en distintas condiciones de plataforma y hardware, as\'i como el uso de hilos.}
+\end{description}
+
+\noindent Estas pruebas se realizan mediante rutinas que ejecutan m\'etodos espec\'ificos del software o ejecuci\'on completa, siempre con par\'ametros cambiantes. Se llevan a cabo en plataformas distintas bajo circunstancias de hardware variadas (ejecuci\'on \'unica, ejecuci\'on junto a otros programas, etc\'etera).
+
+\noindent Adicionalmente a las pruebas de rendimiento se realizan pruebas b\'asicas con usuarios donde se eval\'uan los siguientes criterios:
+
+\begin{description}
+\item [Generaci\'on autom\'atica de listas de reproducci\'on]{De forma similar a la precisi\'on algor\'itmica, pero desde el punto de vista de los usuarios. La intenci\'on es evaluar el grado en que se seleccionan las pistas y la fidelidad del ritmo musical.}
+\item [Transici\'on y mezclado entre pistas]{En este criterio se eval\'ua el grado de aceptaci\'on por parte de los usuarios de la funci\'on de mezclado inteligente utilizando efectos de transici\'on entre pistas.}
+%\item [Interfaz gr\'afica]{Aunque no es la intenci\'on principal de la tesis, tambi\'en se eval\'uan aspectos de usabilidad. El objetivo de este criterio es analizar tendencias por parte de los usuarios para un futuro proyecto.}
+\end{description}
+
+\subsection{Velocidad de procesamiento}
+
+Esta prueba consiste en experimentar con el tiempo que le toma al software procesar los archivos para una sola pista. Se realizara de dos modos: sin reproducci\'on y con reproducci\'on. Cuando se realiza sin reproducci\'on, el software no tomar\'a en cuenta la pista sino que pasar\'a directo al procesamiento de datos y se ejecutar\'a hasta acabar por completo con todos los archivos. Cuando se realiza con reproducci\'on, el software utiliza un limite de archivos para asegurar terminar antes de que la pista actual finalice.
+
+\noindent Para cada uno de los modos se hacen de 20 a 30 repeticiones y en el caso de el modo sin reproducci\'on se utilizan de 50 a 100 archivos de prueba.
+
+\subsection{Precisi\'on algor\'itmica}
+
+Muchos de los elementos dentro del algoritmo son constantes que se han elegido en base al comportamiento buscado, sin embargo, muchas de estas constantes parecen ser m\'as favorables en ciertas ocasciones. En esta prueba se experimenta con la precisi\'on de los algoritmos cuando sus constantes son cambiadas, para medir la precisi\'on se utiliza una lista de reproducci\'on modelo, la cual consiste en pistas que van cambiando sus bpm de forma progresiva. Se realizan de 20 a 30 repeticiones por cada cambio.
+
+\subsection{Eficiencia de ejecuci\'on}
+
+Con las pruebas anteriores ahora se tiene la mejor configuraci\'on de funcionamiento para el software, ahora se experimenta con \'esta la eficiencia de ejecuci\'on donde se eval\'ua la cantidad de recursos m\'inima y m\'axima que necesita el software para funcionar. De igual manera se realizan de 20 a 30 repeticiones con y sin reproducci\'on y para el modo sin reproducci\'on se utilizan de 50 a 100 archivos de prueba.
+
+\subsection{Generaci\'on autom\'atica de listas de reproducci\'on}
+
+Las pruebas con usuarios son m\'as enfocadas al uso del software y no al funcionamiento interno. En el caso de la prueba de generaci\'on de listas de reproducci\'on el usuario eval\'ua desde su punto de vista que eficiente es el software en cuanto a selecci\'on de pistas. Se utilizan pistas seleccionadas por el propio usuario y al final se le har\'a una encuesta pregunt\'andole sobre la eficiencia de la generaci\'on autom\'atica de listas de reproducci\'on.
+
+\subsection{Transici\'on y mezclado entre pistas}
+
+Durante la prueba se le pide al usuario que active la funci\'on de transici\'on y mezclado y que escuche fragmentos de pistas. El usuario eval\'ua esta funci\'on dando a conocer que tan eficiente es y si es de su agrado.
+
+%\subsection{Interfaz gr\'afica}
+
+%\porHacer{El usuario eval\'ua la facilidad con la que se utiliza el programa. Se abre un espacio para cr\'iticas y sugerencias. (Hay posibilidades de que esta prueba no se realice pues el enfoque actual no incluye una interfaz gr\'afica intuitiva.)}
+
+\section{Resultados}
+
+Despu\'es de realizar las pruebas, se eval\'uan los resultados obtenidos. En el caso de las pruebas de rendimiento, se generaron {\em scripts}\footnote{Un {\em script} es un conjunto de instrucciones interpretadas por el sistema operativo para realizar tareas simples.} que corren solo ciertas partes del programa y guardan informaci\'on. Las pruebas con usuarios fueron independeintes, a cada usuario se le dieron tareas a realizar con el programa y evaluarlas al t\'ermino de cada una.
+
+\subsection{Pruebas de rendimiento}
+
+En total se realizaron tres pruebas de rendimiento. Cada prueba se realiza en las plataformas {\sc Linux}\footnote{{\sc Linux} es un sistema operativo de libre distribuci\'on basado en {\sc Unix} (otro sistema operativo de libre distribuci\'on), desarrollado originalmente por Linus Torvalds.}, {\sc Windows}\footnote{{\sc Microsoft Windows} es el nombre de una familia de sistemas operativos desarrollados y vendidos por {\sc Microsoft}.} y {\sc OS X}\footnote{{\sc OS X}, antes llamado {\sc Mac OS X}, es una serie de sistemas operativos basados en {\sc Unix} desarrollados, comercializados y vendidos por {\sc Apple Inc.} que ha sido incluido en su gama de computadoras {\sc Macintosh} desde el a\~no de 2002.} (excepto la prueba de presici\'on algor\'itmica), en cada plataforma se realiza la prueba sin procesos en ejecuci\'on (correr el programa con la mayor cantidad de memoria disponible) y con varios procesos en ejecuci\'on (correr el programa solo con memoria suficiente). La cantidad de repeticiones depende de cada prueba, rondando entre las 50 y 100 repeticiones.
+
+\noindent La prueba de velocidad de procesamiento se efect\'ua tomando los tiempos que tarda el programa para generar los datos, procesarlos, compararlos y dar una respuesta; en este caso la respuesta es la siguiente pista a reproducir.
+
+\noindent En el caso de la prueba de precisi\'on algor\'itmica se modifican aspectos internos; como un umbral de reconocimiento utilizado para suavizar los valores y hacer m\'as facil el reconocimiento, o el n\'umero de bandas de frecuencia que afectan la precisi\'on con la que se procesa la informaci\'on. El porcentaje de aserci\'on se eval\'ua con una lista de reproducci\'on predeterminada; entre m\'as fiel sea la lista de reproducci\'on generada a la predeterminada, mayor ser\'a su porcentaje de aserci\'on.
+
+\noindent Utilizando la mejor configuraci\'on de la prueba de precisi\'on algor\'itmica, se efect\'ua una prueba de eficiencia de ejecuci\'on, simplemente se ejecuta el programa bajo distintas circunstancias y se toman los datos directamente del sistema operativo.
+
+\subsection{Pruebas con usuarios}
+Para las pruebas con usuarios se realizar\'a una sola ejecuci\'on por usuario y al final se le pedir\'a llenar una encuesta. La cantidad m\'inima de usuarios ser\'a 20 (10 mujeres y 10 hombres, 10 j\'ovenes y 10 adultos).
+
+\noindent Para la prueba de generaci\'on autom\'atica de listas de reproducci\'on, se di\'o a los usuarios la tarea de escuchar una de las pistas disponibles y evaluar el nivel en que el programa selecciona autom\'aticamente las pistas.
+
+\noindent Despu\'es de la evaluaci\'on anterior, los usuarios evaluaron los efectos de transici\'on y mezclado entre las pistas.
+
+\porHacer{Los datos reales a\'un no se tienen, se pretende tenerlos listos entre finales de Junio y mitad de Julio, tiempo en el que se pretende tener las pruebas completas y tener las suficientes encuestas. A continuaci\'on se presentan los cuadros y figuras donde estar\'an los resultados reales pero con valores provisionales que no reflejan nada.}
+
+%\noindent Finalmente se les di\'o la tarea de evaluar la facilidad con la que utilizaron el programa.
+
+%\porHacer{Probablemente se agreguen m\'as pruebas o se modifiquen algunas existentes.}
+
+\newpage
+
+\input{./Cuadros/2.eva-vel}
+\input{./Cuadros/3.eva-alg}
+\input{./Cuadros/4.eva-eje}
+
+\newpage
+
+\input{./Figuras/11.us-fid}
+\input{./Figuras/12.us-tm}
+%\input{./Figuras/13.us-gui}
+
+\section{An\'alisis de resultados}
+
+Con el an\'alisis de resultados se obtienen respuestas que describen el funcionamiento del software en situaciones distintas. La modificaci\'on de ciertas variables genera un flujo de ejecuci\'on muy distinto, algunas veces favorable para la misma.
+
+\noindent A continuaci\'on se muestra el an\'alisis de cada prueba, los factores cambiantes en cada una y el objetivo de su realizaci\'on.
+
+\subsection{An\'alisis de rendimiento}
+
+El cuadro \ref{table:eva-vel} muestra los resultados de la prueba de velocidad de procesamiento, \'esta fue realizada para conocer el tiempo que necesita el software para dar una respuesta. Las pistas de audio tienen longitudes variables y gran parte de las operaciones del software dependen de \'esta; el an\'alisis principal consiste en dividir la pista en bloques de tama\~no constante y el n\'umero de bloques depende de la longitud de la pista, la detecci\'on de patrones consiste en analizar archivos generados por la operaci\'on anterior  y su tama\~no es proporcional a la longitud de la pista. Si una pista es de gran longitud entonces tardar\'a m\'as en realizar el procesamiento, por ello es necesario realizar todas las tareas involucradas en un hilo distinto al principal. La intenci\'on de esta prueba es asegurar que el hilo de procesamiento termina antes que la reproducci\'on para tener una respuesta a la siguiente pista.
+
+\noindent Las pruebas iniciales muestran que la velocidad de procesamiento es afectada por la reproducci\'on de la pista, es por eso que se eval\'ua la velocidad que toma el procesamiento con y sin reproducci\'on de pista. \'esto es debido a que la reproducci\'on tambi\'en ocurre en un hilo distinto al principal y toma parte de los recursos para ejecutarse.
+
+\noindent En el cuadro \ref{table:eva-alg} se muestran los resultados de la prueba de precisi\'on algor\'itmica que consiste en analizar las respuestas obtenidas del software bajo ciertas condiciones cambiantes con la intenci\'on de que los datos permanezcan sin cambios. En caso de que existan cambios se toma como mejor condici\'on aquella que tenga cambios m\'inimos.
+
+\noindent Para esta prueba se tiene una lista de reproducci\'on est\'atica como modelo que contiene pistas en una sucesi\'on que sigue una l\'ogica, tal sucesi\'on consiste en pistas de prueba que incrementan sus bpm conforme avanza en la lista. Uno de los factores para esta prueba es el umbral de reconocimiento, \'este es un valor constante que suaviza los valores obtenidos del procesamiento para tener un mejor rango de reconocimiento de bpm, modificar este valor puede conllevar a cambios en la forma en que se genera el archivo de an\'alisis y por lo tanto en la forma de detectar patrones en las pistas. Otro factor a tomar en cuenta es la cantidad de bandas utilizadas, entre mayor sea la cantidad menos sensible es el software pero m\'as r\'apida es su ejecuci\'on, para la prueba de velocidad se utilizaron 8 bandas, para esta prueba se utilizan 4, 8 y 16 bandas. Por \'ultimo se ejecuta la prueba con y sin reproducci\'on para analizar si \'esto afecta la forma en que se genera una respuesta.
+
+\noindent En el cuadro \ref{table:eva-eje} se muestra la evaluaci\'on de la prueba de eficiencia de ejecuci\'on, \'esta sirve para conocer la cantidad de recursos que utiliza el software al ejecutarse en distintos entornos y bajo condiciones de mucha o poca memoria. La intenci\'on es llevar al l\'imite al software y saber hasta que punto a\'un puede continuar operando de forma constante como en las pruebas anteriores. Es importante saber cual es el requerimiento m\'inimo y m\'aximo del software para asegurar el mejor funcionamiento posible y no interferir el la ejecuci\'on de otros procesos.
+
+\subsection{An\'alisis con usuarios}
+
+En los resultados de la prueba de generaci\'on autom\'atica de listas de reproducci\'on mostrados en la figura \ref{fig:us-fid}, los usuarios tienen la tarea de evaluar el seguimiento r\'itmico de la lista de reproducci\'on. 
+
+\noindent Para la prueba se utiliza una lista pregenerada con pistas de prueba y una lista de reproducci\'on que se generar\'a en el momento. Al final de la prueba se le pedir\'a al usuario calificar la fidelidad musical; es decir, si el software logr\'o generar una lista de acuerdo a los ritmos.
+
+\noindent Esta prueba es muy variable en sus resultados y depende de los gustos de cada usuario, pero es importante conocer estos datos para saber si el software realmente cumple con su funci\'on.
+
+\noindent En la figura \ref{fig:us-tm} se muestran los resultados de la prueba de transici\'on y mezclado entre pistas, \'esta pone a los usuarios en la tarea de evaluar la funci\'on del software para generar una transici\'on entre dos pistas. Para ello se reproduce una lista pregenerada y una generada en el momento. Los usuarios eval\'uan si la funci\'on se ejecuta de forma adecuada.
+
+%\noindent Finalmente se muestra la figura \ref{fig:us-gui} de la prueba de usabilidad, \'esta consiste en evaluar la facilidad de uso del software durante la realizaci\'on de las tareas. El objetivo principal del proyecto no se enfoca en la interfaz gr\'afica, sin embargo como trabajo a futuro es importante tomar este aspecto en cuenta.
+
+%\noindent Adicionalmente a las pruebas se le pide a los usuarios que mencionen aspectos destacables tanto positivos como negativos del software y que les gustar\'ia ver en \'el.

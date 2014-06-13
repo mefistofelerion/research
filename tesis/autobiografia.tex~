@@ -1,0 +1,28 @@
+%Autobiografia
+
+\chapter*{Ficha autobiográfica}
+\chaptermark{Ficha autobiográfica}
+
+\begin{center}
+\autor
+
+Candidato para el grado de Ingeniero en Tecnolog\'{\i}a de Software
+
+\uanl
+
+\fime\bigskip
+
+Tesis:
+	
+\begin{tabular}{p{11cm}}
+	\centering
+	\scshape{\large{\titulo}}
+\end{tabular}
+\end{center}
+
+\bigskip
+
+Nacido en la ciudad de Monterrey, Nuevo Le\'on el 23 de septiembre de 1991. Segundo hijo de Jorge Arturo Guerra Aguilar y Martha Patricia L\'opez Arrambide. Cursando el bachillerato en la Preparatoria No. 15 unidad Madero de la Universidad Autonoma De Nuevo Le\'on. Empec\'e mis estudios universitarios en agosto del a\~no en la Facultad de Ingenier\'ia Mec\'anica y El\'ectrica de la UANL en la carrera de Ingeniero en Tecnolog\'ia de Software.
+
+\label{lastpage}
+

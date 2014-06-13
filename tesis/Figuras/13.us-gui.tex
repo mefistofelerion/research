@@ -1,0 +1,30 @@
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}
+[
+    pie chart,
+    slice type={comet}{blu},
+    slice type={legno}{rosso},
+    slice type={coltello}{giallo},
+    slice type={sedia}{viola},
+    slice type={caffe}{verde},
+    pie values/.style={font={\small}},
+    scale=1.5
+]
+
+    \pie[xshift=2.0cm,
+    	values of coltello/.style={pos=1.3}, 
+    	values of legno/.style={pos=1.2},
+   	values of comet/.style={pos=1.3},
+   	values of sedia/.style={pos=1.3},
+   	values of caffe/.style={pos=1.2} ]%
+        { }{42/comet,23/legno,17/sedia,13/coltello,5/caffe}
+
+    \legend[shift={(0cm,-1cm)}]{{Muy Bueno}/caffe, {Bueno}/comet, {Regular}/sedia}
+    \legend[shift={(3cm,-1cm)}]{{Malo}/coltello, {Muy Malo}/legno}
+
+\end{tikzpicture}
+\end{center}
+\caption[Facilidad de uso del programa]{Nivel usabilidad seg\'un los usuarios. \porHacer{(Datos provisionales)}}
+\label{fig:us-gui}
+\end{figure}
