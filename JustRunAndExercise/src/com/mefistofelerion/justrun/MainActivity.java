@@ -69,11 +69,26 @@ public class MainActivity extends Activity {
 			t = (TextView) rootView.findViewById(R.id.welcome_text);
 			button.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
-					t.setText("Welcome to my app");
+					t.setText("Bienvenido!, empecemos a jugar!");
 					button.setVisibility(TRIM_MEMORY_UI_HIDDEN);
 				}
 			});
 			return rootView;
+		}
+		
+		private void initAR(){
+			//config the video settings and initialize vuforia 
+			//initialize and start camera
+			
+	            
+		}
+		
+		private void initPedometer(){
+			//this will have the code for using the pedometer
+		}
+		
+		private void saveInformation(){
+			//collect all the information for investigation purposes
 		}
 	}
 
