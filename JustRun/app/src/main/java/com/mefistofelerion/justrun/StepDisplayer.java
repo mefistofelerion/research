@@ -19,6 +19,10 @@ public class StepDisplayer implements StepListener {
         notifyListener();
     }
 
+    public void reloadSettings() {
+        notifyListener();
+    }
+
     @Override
     public void onStep() {
         this.count++;

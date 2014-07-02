@@ -24,6 +24,8 @@ public class SensorService extends Service {
     private StepDisplayer stepDisplayer;
     private int steps;
     private ICallback mCallback;
+
+
     private StepDisplayer.Listener stepListener = new StepDisplayer.Listener() {
         public void stepsChanged(int value) {
             steps = value;
@@ -36,6 +38,19 @@ public class SensorService extends Service {
             }
         }
     };
+
+
+    public void reloadSettings() {
+
+
+        if (stepDetector != null) {
+            stepDetector.setSensitivity(10);
+        }
+
+        if (stepDisplayer != null) stepDisplayer.reloadSettings();
+//            if (mPaceNotifier     != null) mPaceNotifier.reloadSettings();
+
+    }
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -56,6 +71,39 @@ public class SensorService extends Service {
         stepDisplayer.addListener(stepListener);
         stepDetector.addStepListener(stepDisplayer);
         Toast.makeText(this, getText(R.string.started), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.i(TAG, "[SERVICE] onDestroy");
+
+
+        // Unregister our receiver.
+
+        unregisterDetector();
+
+//        mStateEditor = mState.edit();
+//        stateEditor.putInt("steps", steps);
+//        mStateEditor.putInt("pace", mPace);
+//        mStateEditor.putFloat("distance", mDistance);
+//        mStateEditor.putFloat("speed", mSpeed);
+//        mStateEditor.putFloat("calories", mCalories);
+//        mStateEditor.commit();
+
+
+        wakeLock.release();
+
+        super.onDestroy();
+
+        // Stop detecting
+        sensorManager.unregisterListener(stepDetector);
+
+        // Tell the user we stopped.
+        Toast.makeText(this, getText(R.string.stopped), Toast.LENGTH_SHORT).show();
+    }
+
+    private void unregisterDetector() {
+        sensorManager.unregisterListener(stepDetector);
     }
 
     private void acquireWakeLock() {
