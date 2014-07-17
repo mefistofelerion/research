@@ -63,7 +63,7 @@ public class Initial extends Activity {
 
 
 
-        stepValueView     = (TextView) findViewById(R.id.stepsTextView);
+        stepValueView     = (TextView) findViewById(R.id.stepsView);
 //        mPaceValueView     = (TextView) findViewById(R.id.pace_value);
 
 
