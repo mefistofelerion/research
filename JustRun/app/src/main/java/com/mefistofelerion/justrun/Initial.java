@@ -62,10 +62,12 @@ public class Initial extends Activity {
         }
 
 
-
+        //these could be useful when doing the experiments
         stepValueView     = (TextView) findViewById(R.id.stepsView);
-//        mPaceValueView     = (TextView) findViewById(R.id.pace_value);
-
+        mPaceValueView     = (TextView) findViewById(R.id.pace_value);
+        mDistanceValueView = (TextView) findViewById(R.id.distance_value);
+        mSpeedValueView    = (TextView) findViewById(R.id.speed_value);
+        mCaloriesValueView = (TextView) findViewById(R.id.calories_value);
 
     }
     private SensorService.ICallback mCallback = new SensorService.ICallback() {
@@ -75,9 +77,22 @@ public class Initial extends Activity {
         public void paceChanged(int value) {
             mHandler.sendMessage(mHandler.obtainMessage(PACE_MSG, value, 0));
         }
+
+        public void distanceChanged(float value) {
+            mHandler.sendMessage(mHandler.obtainMessage(DISTANCE_MSG, (int)(value*1000), 0));
+        }
+        public void speedChanged(float value) {
+            mHandler.sendMessage(mHandler.obtainMessage(SPEED_MSG, (int)(value*1000), 0));
+        }
+        public void caloriesChanged(float value) {
+            mHandler.sendMessage(mHandler.obtainMessage(CALORIES_MSG, (int)(value), 0));
+        }
     };
     private static final int STEPS_MSG = 1;
     private static final int PACE_MSG = 2;
+    private static final int DISTANCE_MSG = 3;
+    private static final int SPEED_MSG = 4;
+    private static final int CALORIES_MSG = 5;
 
     private Handler mHandler = new Handler() {
         @Override
@@ -88,13 +103,46 @@ public class Initial extends Activity {
                     stepValueView.setText("Steps: " + stepValue);
                     break;
                 case PACE_MSG:
-//                    mPaceValue = msg.arg1;
-//                    if (mPaceValue <= 0) {
-//                        mPaceValueView.setText("0");
-//                    } else {
-//                        mPaceValueView.setText("" + (int) mPaceValue);
-//                    }
+                    mPaceValue = msg.arg1;
+                    if (mPaceValue <= 0) {
+                        mPaceValueView.setText("0");
+                    } else {
+                        mPaceValueView.setText("" + (int) mPaceValue);
+                    }
                     break;
+                case DISTANCE_MSG:
+                    mDistanceValue = ((int)msg.arg1)/1000f;
+                    if (mDistanceValue <= 0) {
+                        mDistanceValueView.setText("0");
+                    }
+                    else {
+                        mDistanceValueView.setText(
+                                ("" + (mDistanceValue + 0.000001f)).substring(0, 5)
+                        );
+                    }
+                    break;
+                case SPEED_MSG:
+                    mSpeedValue = ((int)msg.arg1)/1000f;
+                    if (mSpeedValue <= 0) {
+                        mSpeedValueView.setText("0");
+                    }
+                    else {
+                        mSpeedValueView.setText(
+                                ("" + (mSpeedValue + 0.000001f)).substring(0, 4)
+                        );
+                    }
+                    break;
+                case CALORIES_MSG:
+                    mCaloriesValue = msg.arg1;
+                    if (mCaloriesValue <= 0) {
+                        mCaloriesValueView.setText("0");
+                    }
+                    else {
+                        mCaloriesValueView.setText("" + (int)mCaloriesValue);
+                    }
+                    break;
+                default:
+                    super.handleMessage(msg);
             }
 
         }
