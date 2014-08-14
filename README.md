@@ -5,3 +5,5 @@ La aplicacion esta siendo desarrollada en Android utilizando la herramienta de d
 
 Estructura del sistema esta con el patron de diseño observer, para poder llamar al notificador cada vez que es ejecutado un sensor.
 Hasta el momento se lleva implementado un servicio que cuenta pasos con el sensor del acelerometro con ese dato se calcula los demas factores que seran de ayuda para el experimento, estos son cuenta calorias, distancia, velocidad.
+
+Estare utilizando Unity para realizar la parte de el AR, primero hare unos disenos de prueba.
