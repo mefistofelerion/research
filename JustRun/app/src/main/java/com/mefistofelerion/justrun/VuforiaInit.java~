@@ -5,11 +5,5 @@ package com.mefistofelerion.justrun;
  * this class will initialize the vuforia framework and render the animations etc
  */
 public class VuforiaInit {
-
-    public VuforiaInit(){}
-
-    public VuforiaInit(String attribs[]){}
-
-    public void load3DRenders(){}
 }
 
