@@ -11,5 +11,6 @@ public class VuforiaInit {
     public VuforiaInit(String attribs[]){}
 
     public void load3DRenders(){}
-}
 
+    //TODO create windoes where 3d renders also make it androids create destroy pause etc.
+}
