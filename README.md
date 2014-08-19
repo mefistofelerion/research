@@ -8,3 +8,5 @@ Hasta el momento se lleva implementado un servicio que cuenta pasos con el senso
 
 Estare utilizando Unity para realizar la parte de el AR, primero hare unos disenos de prueba. 
 Encontre un exporter blender -> Vuforia, lo probare para ver que tal.
+
+Se utilizara Log4j para hacer logs de los datos obtenidos
