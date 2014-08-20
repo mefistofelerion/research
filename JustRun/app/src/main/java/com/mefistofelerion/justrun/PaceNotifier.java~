@@ -13,7 +13,7 @@ public class PaceNotifier implements StepListener {
     int mCounter = 0;
     
     private long mLastStepTime = 0;
-    private long[] mLastStepDeltas = {-1, -1, -1, -1};//
+    private long[] mLastStepDeltas = {-1, -1, -1, -1};
     private int mLastStepDeltasIndex = 0;
     private long mPace = 0;
 

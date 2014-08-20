@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "20.0.0"
+    buildToolsVersion '20.0.0'
 
     defaultConfig {
         applicationId "com.mefistofelerion.justrun"
@@ -21,7 +21,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile files('libs/motion-v2.0.0.jar')
-    compile files('libs/sdk-v1.0.0.jar')
     compile files('libs/Vuforia.jar')
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.0.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.0.1'
 }
