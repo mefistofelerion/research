@@ -1,3 +1,4 @@
+-RESUMEN
 Investigación para tesis Agosto-Diciembre 2014 para la carrera Ingeniero en Tecnología de Software de la Facultad de Ingeniería Mecánica y Eléctrica de la Universidad Autónoma de Nuevo León
 
 Este software estará enfocado para motivar a los niños a tener actividad física.
@@ -10,3 +11,7 @@ Estare utilizando Unity para realizar la parte de el AR, primero hare unos disen
 Encontre un exporter blender -> Vuforia, lo probare para ver que tal.
 
 Se utilizara Log4j para hacer logs de los datos obtenidos
+
+-CHANGELOG
+	SE SIGUE EN LA MODELACION DE LAS CRIATURAS
+	SE AGREGARA DEPENDENCIAS PARA UNIT TESTING
