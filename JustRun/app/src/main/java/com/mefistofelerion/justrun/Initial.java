@@ -22,6 +22,8 @@ public class Initial extends Activity {
     private static final String TAG = "Initial Activity";
     private int paceValue;
     private int stepValue;
+    private float distanceValue;
+    private float speedValue;
     private boolean isRunning;
     private TextView stepValueView;
 
@@ -36,6 +38,7 @@ public class Initial extends Activity {
             initPedometerService();
 
         }
+        LoggerConf logger = new LoggerConf();//to initialize logger
     }
 
     @Override
@@ -64,11 +67,11 @@ public class Initial extends Activity {
 
         //these could be useful when doing the experiments
         stepValueView     = (TextView) findViewById(R.id.stepsView);
-        mPaceValueView     = (TextView) findViewById(R.id.pace_value);
-        mDistanceValueView = (TextView) findViewById(R.id.distance_value);
-        mSpeedValueView    = (TextView) findViewById(R.id.speed_value);
-        mCaloriesValueView = (TextView) findViewById(R.id.calories_value);
-
+       /* paceValueView     = (TextView) findViewById(R.id.pace_value);
+        distanceValueView = (TextView) findViewById(R.id.distance_value);
+        speedValueView    = (TextView) findViewById(R.id.speed_value);
+        caloriesValueView = (TextView) findViewById(R.id.calories_value);
+        *///temporary just to know what value they are getting
     }
     private SensorService.ICallback mCallback = new SensorService.ICallback() {
         public void stepsChanged(int value) {
@@ -94,6 +97,7 @@ public class Initial extends Activity {
     private static final int SPEED_MSG = 4;
     private static final int CALORIES_MSG = 5;
 
+    private float caloriesValue;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -103,42 +107,42 @@ public class Initial extends Activity {
                     stepValueView.setText("Steps: " + stepValue);
                     break;
                 case PACE_MSG:
-                    mPaceValue = msg.arg1;
-                    if (mPaceValue <= 0) {
-                        mPaceValueView.setText("0");
+                    paceValue = msg.arg1;
+                    if (paceValue <= 0) {
+                        //paceValueView.setText("0");
                     } else {
-                        mPaceValueView.setText("" + (int) mPaceValue);
+                        //mPaceValueView.setText("" + (int) mPaceValue);
                     }
                     break;
                 case DISTANCE_MSG:
-                    mDistanceValue = ((int)msg.arg1)/1000f;
-                    if (mDistanceValue <= 0) {
-                        mDistanceValueView.setText("0");
+                    distanceValue = ((int)msg.arg1)/1000f;
+                    if (distanceValue <= 0) {
+                        //mDistanceValueView.setText("0");
                     }
                     else {
-                        mDistanceValueView.setText(
-                                ("" + (mDistanceValue + 0.000001f)).substring(0, 5)
-                        );
+                        /*distanceValueView.setText(
+                                ("" + (distanceValue + 0.000001f)).substring(0, 5)
+                        );*/
                     }
                     break;
                 case SPEED_MSG:
-                    mSpeedValue = ((int)msg.arg1)/1000f;
-                    if (mSpeedValue <= 0) {
-                        mSpeedValueView.setText("0");
+                    speedValue = ((int)msg.arg1)/1000f;
+                    if (speedValue <= 0) {
+                        //speedValueView.setText("0");
                     }
                     else {
-                        mSpeedValueView.setText(
-                                ("" + (mSpeedValue + 0.000001f)).substring(0, 4)
-                        );
+                        /*speedValueView.setText(
+                                ("" + (speedValue + 0.000001f)).substring(0, 4)
+                        );*/
                     }
                     break;
                 case CALORIES_MSG:
-                    mCaloriesValue = msg.arg1;
-                    if (mCaloriesValue <= 0) {
-                        mCaloriesValueView.setText("0");
+                    caloriesValue = msg.arg1;
+                    if (caloriesValue <= 0) {
+                        //mCaloriesValueView.setText("0");
                     }
                     else {
-                        mCaloriesValueView.setText("" + (int)mCaloriesValue);
+                       // mCaloriesValueView.setText("" + (int)mCaloriesValue);
                     }
                     break;
                 default:

@@ -12,5 +12,5 @@ public class VuforiaInit {
 
     public void load3DRenders(){}
 
-    //TODO create windoes where 3d renders also make it androids create destroy pause etc.
+    //TODO create windows where 3d renders also make it androids create destroy pause etc.
 }
