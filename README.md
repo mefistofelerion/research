@@ -12,6 +12,9 @@ Encontre un exporter blender -> Vuforia, lo probare para ver que tal.
 
 Se utilizara Log4j para hacer logs de los datos obtenidos
 
+Se utilizara Groovy para implementar el servidor REST por medio de spring
+
 -CHANGELOG
 	SE SIGUE EN LA MODELACION DE LAS CRIATURAS
 	SE AGREGARA DEPENDENCIAS PARA UNIT TESTING
+	SE AGREGO ARCHIVO DE GROOVY
