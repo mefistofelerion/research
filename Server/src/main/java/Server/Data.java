@@ -2,26 +2,49 @@ package Server;
 
 public class SensorData {
 
+    private final int id;
     private final int steps;
     private final double distance;
     private final double calories;
 
 
 
-    public SensorData(int steps, double distance, double calories) {
+    public SensorData(int id, int steps, double distance, double calories) {
         this.id = id;
-        this.content = content;
+        this.steps = steps;
+        this.distance = distance;
+        this.calories = calories;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public void setId(int id){
+        this.id = id
     }
 
     public int getSteps() {
-        return steps;
+        return this.steps;
+    }
+
+    public void setSteps(int steps){
+        this.steps = steps;
     }
 
     public double getDistance() {
-        return distance;
+        return this.distance;
+    }
+
+    public void setDistance(double distance){
+        this.distance = distance;
     }
 
     public double getCalories(){
-        return calories;
+        return this.calories;
+    }
+
+    public void setCalories(double calories){
+        this.calories = calories
     }
 }

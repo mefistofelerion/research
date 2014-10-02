@@ -8,13 +8,15 @@ Estructura del sistema esta con el patron de diseño observer, para poder llamar
 Hasta el momento se lleva implementado un servicio que cuenta pasos con el sensor del acelerometro con ese dato se calcula los demas factores que seran de ayuda para el experimento, estos son cuenta calorias, distancia, velocidad.
 
 Estare utilizando Unity para realizar la parte de el AR, primero hare unos disenos de prueba. 
-Encontre un exporter blender -> Vuforia, lo probare para ver que tal.
+Encontre un exporter blender -> Vuforia, lo probare para ver que tal.[Actualización] Blender ya no se utilizará.
 
 Se utilizara Log4j para hacer logs de los datos obtenidos
 
 Se utilizara Groovy para implementar el servidor REST por medio de spring
+Se esta utilizando Maven para administrar el proyecto del servidor, para compilar y para copiar todas las dependencias que necesitara la parte del servidor
 
 -CHANGELOG
 	SE SIGUE EN LA MODELACION DE LAS CRIATURAS
-	SE AGREGARA DEPENDENCIAS PARA UNIT TESTING
-	SE AGREGO ARCHIVO DE GROOVY
+    SE AGREGARON FUNCIONES EN EL CONTROLADOR PARA RECIBIR LOS DATOS POR MEDIO DE JSON
+	SE MODIFICO EL CONTROLLER DEL SERVER PARA RECIBIR SUGERENCIAS POR MEDIO DE LA APLICACIÓN
+
