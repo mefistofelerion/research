@@ -46,7 +46,6 @@ public class DataController {
 			return ResponseEntity<Data> info;
 		}
 	}
-<<<<<<< HEAD
 
 	@ResponseBody
 	@RequestMapping(value="/suggestions")//este metodo servira para recibir sugerencias desde la aplicación y almacenarlas dentro de la BD
@@ -58,6 +57,14 @@ public class DataController {
 				//cerrar conexion
 			}
 		}
-=======
->>>>>>> 6009e6b3d8774635488d71c7ef6c56f2954bf138
+
+	ResponseBody
+	@RequestMapping(value="/subscribe")
+		public ResponseEntity<String> subscribe(String subscriber){
+			//preparar query y conexion de datos
+			if(subscriber != null){
+				//try escribirlo en la base de datos
+				//cerrar conexion
+			}
+		}		
 }
