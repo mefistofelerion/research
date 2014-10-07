@@ -14,9 +14,12 @@ Se utilizara Log4j para hacer logs de los datos obtenidos
 
 Se utilizara Groovy para implementar el servidor REST por medio de spring
 Se esta utilizando Maven para administrar el proyecto del servidor, para compilar y para copiar todas las dependencias que necesitara la parte del servidor
+Se contempla la utilización de MongoDB como base de datos ya que puede recibir información en formato JSON 
 
 -CHANGELOG
 	SE SIGUE EN LA MODELACION DE LAS CRIATURAS
     SE AGREGARON FUNCIONES EN EL CONTROLADOR PARA RECIBIR LOS DATOS POR MEDIO DE JSON
 	SE MODIFICO EL CONTROLLER DEL SERVER PARA RECIBIR SUGERENCIAS POR MEDIO DE LA APLICACIÓN
+    SE AGREGO MONGODB COMO BASE DE DATOS
+    SE AGREGO LA ENTIDAD DE LA BASE DE DATOS 
 
