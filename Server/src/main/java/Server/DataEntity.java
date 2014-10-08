@@ -3,6 +3,8 @@ import org.springframework.data.annotation.Id;
 
 public class DataRepository {
 
+    @Id
+    private final int id;
     private final int steps;
     private final double distance;
     private final double calories;

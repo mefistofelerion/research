@@ -9,13 +9,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RequestMapping(value = "/justrun")
 public class DataController {
 
+	@Autowire
+	private DataRepository repository; //para hacer llamada al repositorio donde estaran los datos
+
 /*
 * obtiene los datos por medio de un request en formato json
 */
 	@ResponseBody
     @RequestMapping(value = "/data", method={RequestMethod.GET})
-    public ResponseEntity<String> dataFetching(@PathVariable Data data ) {
+    public ResponseEntity<String> dataFetching(@PathVariable DataEntity data ) {
     	if(data!=null)
+    		repository.save(new DataEntity(data.getId(),data.getSteps(),data.getDistance(), data.getCalories())));
     		return new ResponseEntity<String>(HttpStatus.OK);
     	else
     		return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
@@ -27,7 +31,7 @@ public class DataController {
 	@ResponseBody
 	@RequestMapping(value="/data/works", method={RequestMethod.GET})
 	public ResponseEntity<Boolean> isWorking(){
-		if()//datos se pueden guardar o accesar
+		if(repository.serverStatus() == 1))//datos se pueden guardar o accesar
 			return true;
 		else{
 			return false;
@@ -42,7 +46,9 @@ public class DataController {
 		public ResponseEntity<Data> dataObtaining(@PathVariable String id){
 		//checar si hay conexion al database o archivo
 		//hacer un query con el id
-			Data info;//aqui pondre la información proveniente del query
+
+			DataEntity info = repository.findById(id);;//aqui pondre la información proveniente del query
+
 			return ResponseEntity<Data> info;
 		}
 	}
