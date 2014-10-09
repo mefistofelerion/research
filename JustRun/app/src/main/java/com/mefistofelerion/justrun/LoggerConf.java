@@ -13,4 +13,12 @@ public class LoggerConf {
         log.info("This message should be seen in log file and logcat");
     }
 
+    public void error(String error){
+        log.error(error);
+    }
+
+    public void debug(String msg){
+        log.debug(msg);
+    }
+
 }
