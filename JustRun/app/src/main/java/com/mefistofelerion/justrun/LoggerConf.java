@@ -1,6 +1,7 @@
 package com.mefistofelerion.justrun;
-import org.apache.logging.log4j.Logger;
+
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * will be used to collect data to be send later

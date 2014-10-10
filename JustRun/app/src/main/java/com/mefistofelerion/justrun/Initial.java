@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,8 +16,15 @@ import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.SharedPreferences.Editor;
-import android.widget.TextView;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -83,10 +91,35 @@ public class Initial extends Activity {
             }
 
             fileToWrite.write(data.getBytes());
+            //if everything goes ok, save it to the DB
+
+            JSONObject dataToSend = new JSONObject();
+            dataToSend.put("steps",savedValues.getInt("steps",0));
+            dataToSend.put("distance",savedValues.getFloat("distance",0));
+            dataToSend.put("calories",savedValues.getFloat("calories",0));
+            sendData(dataToSend);
         }catch(FileNotFoundException ex){
             logger.error("error while opening file for writing data");
         }catch(IOException ex){
             logger.error("error while writing the file");
+        }catch(JSONException ex){
+            logger.error("error while creating json string");
+        }
+    }
+
+    private void sendData(JSONObject json) {
+        try{
+        HttpClient client = new DefaultHttpClient();
+        HttpGet httpget = new HttpGet("http://localhost:8080/data");
+        ResponseHandler<String> responseHandler = new BasicResponseHandler();
+        String response = client.execute(httpget, responseHandler);
+        if(response == "ok"){
+            logger.debug("DB wrote correctly the data");
+        }
+        }catch(ClientProtocolException ex){
+            logger.error("error while executing request to the server");
+        }catch(IOException ex){
+            logger.error("error while executing request to the server");
         }
     }
 
