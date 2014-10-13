@@ -42,12 +42,11 @@ public class Initial extends Activity {
     //private TextView stepValueView;
     private SharedPreferences savedValues;
     private Editor saveInfo;
-    private LoggerConf logger;
+    private LoggerHelper logger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_initial); eliminated because I don't need a view
         stepValue = 0;
         paceValue = 0;
         if (!isKitKatWithStepCounter(getPackageManager())) {
@@ -56,7 +55,7 @@ public class Initial extends Activity {
 
         }
         saveInfo = savedValues.edit();
-        logger = new LoggerConf();//to initialize logger
+        logger = new LoggerHelper();//to initialize logger
     }
 
     @Override
@@ -127,9 +126,6 @@ public class Initial extends Activity {
     protected void onResume() {
         Log.i(TAG, "[ACTIVITY] onResume");
         super.onResume();
-
-
-
         // Start the service if this is considered to be an application start (last onPause was long ago)
         if (!isRunning) {
             initPedometerService();
@@ -187,7 +183,7 @@ public class Initial extends Activity {
                     if (paceValue <= 0) {
                         saveInfo.putInt("pace", paceValue);
                     } else {
-                       //something if it is 0
+                        logger.info("no pace detected");
                     }
                     break;
                 case DISTANCE_MSG:
@@ -196,11 +192,7 @@ public class Initial extends Activity {
                         saveInfo.putFloat("distance", distanceValue);
                     }
                     else {
-                        /*distanceValueView.setText(
-                                ("" + (distanceValue + 0.000001f)).substring(0, 5)
-                        );
-                        And something else
-                        */
+                        logger.info("there's no distance yet");
                     }
                     break;
                 case SPEED_MSG:
@@ -209,11 +201,7 @@ public class Initial extends Activity {
                        saveInfo.putFloat("speed", speedValue);
                     }
                     else {
-                        /*speedValueView.setText(
-                                ("" + (speedValue + 0.000001f)).substring(0, 4)
-                        );
-                        something
-                        */
+                        logger.info("there's no speed yet");
                     }
                     break;
                 case CALORIES_MSG:
@@ -222,8 +210,7 @@ public class Initial extends Activity {
                         saveInfo.putFloat("calories", caloriesValue);
                     }
                     else {
-                       // mCaloriesValueView.setText("" + (int)mCaloriesValue);
-                        //something
+                       logger.info("there's no calories to show yet ");
                     }
                     break;
                 default:
@@ -255,16 +242,12 @@ public class Initial extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.initial, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) return true;
         return super.onOptionsItemSelected(item);
@@ -286,5 +269,4 @@ public class Initial extends Activity {
     private void initPedometerService() {
         startService(new Intent(Initial.this, SensorService.class));
     }
-
 }

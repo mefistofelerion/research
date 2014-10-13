@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ivan on 29/06/14.
+ * Created by Ivan Guerra on 29/06/14.
  */
 public class StepDetector implements SensorEventListener {
 
@@ -59,7 +59,7 @@ public class StepDetector implements SensorEventListener {
                 float direction = (v > mLastValues[k] ? 1 : (v < mLastValues[k] ? -1 : 0));
                 if (direction == -mLastDirections[k]) {
                     // Direction changed
-                    int extType = (direction > 0 ? 0 : 1); // minumum or maximum?
+                    int extType = (direction > 0 ? 0 : 1);
                     mLastExtremes[extType][k] = mLastValues[k];
                     float diff = Math.abs(mLastExtremes[extType][k] - mLastExtremes[1 - extType][k]);
 
