@@ -79,17 +79,7 @@ public class SensorService extends Service {
 
 
         // Unregister our receiver.
-
         unregisterDetector();
-
-//        mStateEditor = mState.edit();
-//        stateEditor.putInt("steps", steps);
-//        mStateEditor.putInt("pace", mPace);
-//        mStateEditor.putFloat("distance", mDistance);
-//        mStateEditor.putFloat("speed", mSpeed);
-//        mStateEditor.putFloat("calories", mCalories);
-//        mStateEditor.commit();
-
 
         wakeLock.release();
 

@@ -16,6 +16,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -120,6 +121,7 @@ public class Initial extends Activity {
         }catch(IOException ex){
             logger.error("error while executing request to the server");
         }
+        Toast.makeText(getApplicationContext(),"Information sent!",Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -134,7 +136,6 @@ public class Initial extends Activity {
         else if (isRunning) {
             bindStepService();
         }
-
 
         //these could be useful when doing the experiments, I will let this here if i need it
         /* stepValueView     = (TextView) findViewById(R.id.stepsView);

@@ -7,7 +7,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 /**
- * This class will be the one who expects changes on the image.
+ * This class will be the one that expects changes on the image.
  * Created by Ivan Guerra on 10/12/14.
  */
 public class VuforiaRenderer extends Activity {

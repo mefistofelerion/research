@@ -47,15 +47,15 @@ public class PaceNotifier implements StepListener {
             mLastStepDeltasIndex = (mLastStepDeltasIndex + 1) % mLastStepDeltas.length;
             
             long sum = 0;
-            boolean isMeaningfull = true;
-            for (int i = 0; i < mLastStepDeltas.length; i++) {
-                if (mLastStepDeltas[i] < 0) {
-                    isMeaningfull = false;
+            boolean isMeaningful = true;
+            for (long mLastStepDelta : mLastStepDeltas) {
+                if (mLastStepDelta < 0) {
+                    isMeaningful = false;
                     break;
                 }
-                sum += mLastStepDeltas[i];
+                sum += mLastStepDelta;
             }
-            if (isMeaningfull && sum > 0) {
+            if (isMeaningful && sum > 0) {
                 long avg = sum / mLastStepDeltas.length;
                 mPace = 60*1000 / avg;
             }
