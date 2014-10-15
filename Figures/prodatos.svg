@@ -30,10 +30,10 @@
      inkscape:cy="170.07874"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
-     inkscape:window-width="1366"
-     inkscape:window-height="744"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-width="1440"
+     inkscape:window-height="852"
+     inkscape:window-x="2"
+     inkscape:window-y="50"
      width="12.8cm"
      height="9.6cm"
      units="cm"
@@ -46,7 +46,7 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:snap-bbox="true"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="0">
     <sodipodi:guide
        orientation="vertical"
        position="56.476527"
@@ -98,21 +98,21 @@
      id="layer1"
      transform="translate(4.149475e-6,-698.0315)">
     <rect
-       style="fill:#b3b3b3"
+       style="fill:#808080"
        id="rect2995"
        width="453.5433"
        height="340.15747"
        x="-4.149475e-06"
        y="698.03149" />
     <rect
-       style="fill:#999999"
+       style="fill:#cccccc"
        id="rect3005"
        width="283.46457"
        height="113.38581"
        x="77.952751"
        y="917.71655" />
     <rect
-       style="fill:#333333"
+       style="fill:#ffffff"
        id="rect3794"
        width="240.94489"
        height="85.039368"
@@ -133,38 +133,30 @@
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="190.6794"
-       y="925.13843"
+       x="189.85114"
+       y="932.22504"
        id="text3800"
        sodipodi:linespacing="0%"><tspan
          sodipodi:role="line"
          id="tspan3802"
-         x="190.6794"
-         y="925.13843">SERVIDOR</tspan></text>
+         x="189.85114"
+         y="932.22504">SERVIDOR</tspan></text>
     <rect
-       style="fill:#999999"
+       style="fill:#cccccc"
        id="rect3804"
        width="418.11023"
        height="177.16536"
        x="14.173224"
        y="712.20471" />
     <rect
-       style="fill:#999999"
-       id="rect3806"
-       width="113.38583"
-       height="56.692913"
-       x="28.346457"
-       y="35.43306"
-       transform="translate(-4.149475e-6,698.0315)" />
-    <rect
-       style="fill:#4d4d4d"
+       style="fill:#ffffff"
        id="rect3808"
        width="177.16536"
        height="85.039368"
        x="28.346453"
        y="740.55115" />
     <rect
-       style="fill:#4d4d4d"
+       style="fill:#ffffff"
        id="rect3810"
        width="177.16534"
        height="85.039398"
@@ -180,10 +172,10 @@
          sodipodi:role="line"
          id="tspan3814"
          x="163.60121"
-         y="726.7132">DISPOSITIVO MOVIL</tspan></text>
+         y="726.7132">Dispositivo movil</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#280b0b;fill-opacity:1;stroke:none;font-family:Sans"
        x="62.798077"
        y="769.23291"
        id="text3816"
@@ -191,7 +183,7 @@
          sodipodi:role="line"
          id="tspan3818"
          x="62.798077"
-         y="769.23291">DATOS OBTENIDOS POR </tspan><tspan
+         y="769.23291">Datos obtenidos por los </tspan><tspan
          sodipodi:role="line"
          x="62.798077"
          y="769.23291"
@@ -207,14 +199,14 @@
          sodipodi:role="line"
          id="tspan3824"
          x="79.846123"
-         y="74.003723"></tspan><tspan
+         y="74.003723" /><tspan
          sodipodi:role="line"
          id="tspan3826"
          x="79.846123"
          y="74.003723" /></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
        x="84.380188"
        y="782.92926"
        id="text3828"
@@ -222,10 +214,10 @@
          sodipodi:role="line"
          id="tspan3830"
          x="84.380188"
-         y="782.92926">SENSORES</tspan></text>
+         y="782.92926">sensores</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#280b0b;fill-opacity:1;stroke:none;font-family:Sans"
        x="262.12659"
        y="776.31952"
        id="text3832"
@@ -233,9 +225,9 @@
          sodipodi:role="line"
          id="tspan3834"
          x="262.12659"
-         y="776.31952">ALMACENAMIENTO INTERNO</tspan></text>
+         y="776.31952">Almacenamiento interno</tspan></text>
     <rect
-       style="fill:#4d4d4d"
+       style="fill:#ffffff"
        id="rect3836"
        width="170.07875"
        height="42.519711"
@@ -244,7 +236,7 @@
        transform="translate(-4.149475e-6,698.0315)" />
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#280b0b;fill-opacity:1;stroke:none;font-family:Sans"
        x="175.27197"
        y="166.18381"
        id="text3838"
@@ -253,10 +245,10 @@
          sodipodi:role="line"
          id="tspan3840"
          x="175.27197"
-         y="166.18381">PROCESAMIENTO DE</tspan></text>
+         y="166.18381">Procesamiento de</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#280b0b;fill-opacity:1;stroke:none;font-family:Sans"
        x="207.59528"
        y="875.5321"
        id="text3842"
@@ -264,7 +256,7 @@
          sodipodi:role="line"
          id="tspan3844"
          x="207.59528"
-         y="875.5321">DATOS</tspan></text>
+         y="875.5321">datos</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
        d="m 92.125984,127.55905 0,35.43307"
@@ -302,7 +294,7 @@
        transform="translate(-4.149475e-6,698.0315)" />
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#241c1c;fill-opacity:1;stroke:none;font-family:Sans"
        x="148.74077"
        y="960.57147"
        id="text3858"
@@ -310,10 +302,10 @@
          sodipodi:role="line"
          id="tspan3860"
          x="148.74077"
-         y="960.57147">ALMACENAMIENTO DE DATOS</tspan></text>
+         y="960.57147">Almacenamiento de datos</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#241c1c;fill-opacity:1;stroke:none;font-family:Sans"
        x="197.86366"
        y="981.35443"
        id="text3862"
@@ -321,6 +313,6 @@
          sodipodi:role="line"
          id="tspan3864"
          x="197.86366"
-         y="981.35443">GLOBAL</tspan></text>
+         y="981.35443">global</tspan></text>
   </g>
 </svg>

@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="arquitectura.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -37,10 +37,10 @@
      inkscape:bbox-paths="true"
      inkscape:snap-global="true"
      inkscape:snap-midpoints="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="744"
+     inkscape:window-width="1440"
+     inkscape:window-height="852"
      inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-y="0"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -50,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -74,7 +74,7 @@
        y="100.36218"
        ry="2" />
     <rect
-       style="fill:#0000ff"
+       style="fill:#f2f2f2"
        id="rect3001"
        width="282"
        height="148"
@@ -82,17 +82,17 @@
        y="144.36218"
        ry="74" />
     <rect
-       style="fill:#0000ff"
+       style="fill:#f2f2f2"
        id="rect3006"
        width="276"
-       height="138"
+       height="144.78125"
        x="382"
-       y="154.36218"
-       ry="58" />
+       y="147.58093"
+       ry="60.85009" />
     <rect
-       style="fill:#0000ff"
+       style="fill:#f2f2f2"
        id="rect3010"
-       width="316"
+       width="381.69141"
        height="114"
        x="252"
        y="336.36218"
@@ -100,15 +100,16 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot3012"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;text-anchor:middle;text-align:center"><flowRegion
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
          id="flowRegion3014"><rect
            id="rect3016"
            width="482"
            height="52"
            x="128"
            y="444.36218"
-           style="text-anchor:middle;text-align:center" /></flowRegion><flowPara
-         id="flowPara3018">Services</flowPara></flowRoot>    <flowRoot
+           style="text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara3018"
+         style="fill:#1a1a1a">Servicios</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3028"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
@@ -118,7 +119,7 @@
            height="90"
            x="86"
            y="178.36218" /></flowRegion><flowPara
-         id="flowPara3034">    step</flowPara></flowRoot>    <text
+         id="flowPara3034">  Contador</flowPara></flowRoot>    <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        x="216"
@@ -139,7 +140,7 @@
          sodipodi:role="line"
          id="tspan3042"
          x="106"
-         y="260.36218">counter</tspan></text>
+         y="260.36218">de pasos</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -148,31 +149,35 @@
        id="text3044"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3046"></tspan></text>
+         id="tspan3046" /></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="440"
-       y="250.36218"
+       x="440.47852"
+       y="231.00671"
        id="text3048"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3050"
-         x="440"
-         y="250.36218">Logging</tspan></text>
+         x="440.47852"
+         y="231.00671">Logging</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="284"
-       y="400.36218"
+       x="252"
+       y="366.75281"
        id="text3052"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3054"
-         x="284"
-         y="400.36218">Data Process</tspan></text>
+         x="252"
+         y="366.75281">Procesamiento de</tspan><tspan
+         sodipodi:role="line"
+         x="252"
+         y="416.75281"
+         id="tspan3035">         datos</tspan></text>
     <rect
-       style="fill:#0000ff"
+       style="fill:#f2f2f2"
        id="rect3058"
        width="260"
        height="130"
@@ -189,9 +194,9 @@
          sodipodi:role="line"
          id="tspan3062"
          x="106"
-         y="930.36218">            Application</tspan></text>
+         y="930.36218">            Aplicacion</tspan></text>
     <rect
-       style="fill:#0000ff"
+       style="fill:#f2f2f2"
        id="rect3064"
        width="246"
        height="104"
@@ -201,32 +206,32 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="136"
-       y="628.36218"
+       x="106.58984"
+       y="604.75281"
        id="text3066"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3068"
-         x="136"
-         y="628.36218">3D </tspan><tspan
+         x="106.58984"
+         y="604.75281"
+         id="tspan3070">Renderizado</tspan><tspan
          sodipodi:role="line"
-         x="136"
-         y="678.36218"
-         id="tspan3070">rendering</tspan></text>
+         x="106.58984"
+         y="654.75281"
+         id="tspan3031">        3D</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="430"
-       y="628.36218"
+       x="439.14844"
+       y="642.92273"
        id="text3072"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3076"
-         x="430"
-         y="628.36218">Camera</tspan><tspan
+         x="439.14844"
+         y="642.92273">Camara</tspan><tspan
          sodipodi:role="line"
-         x="430"
-         y="678.36218"
+         x="439.14844"
+         y="692.92273"
          id="tspan3080" /></text>
     <text
        xml:space="preserve"
@@ -238,7 +243,7 @@
          sodipodi:role="line"
          id="tspan3084"
          x="138"
-         y="64.362183"></tspan><tspan
+         y="64.362183" /><tspan
          sodipodi:role="line"
          id="tspan3086"
          x="138"
@@ -246,14 +251,14 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="204"
-       y="36.362183"
+       x="245.60999"
+       y="33.389324"
        id="text3088"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3090"
-         x="204"
-         y="36.362183">Arquitectura</tspan></text>
+         x="245.60999"
+         y="33.389324">Arquitectura</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
        d="m 232,704.36218 0,114"

@@ -1,8 +1,13 @@
 package com.mefistofelerion.justrun;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Camera;
 
 import com.qualcomm.QCAR.QCAR;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
@@ -34,7 +39,25 @@ public class VuforiaRenderer extends Activity {
     }
 
     public void createEnemy(){
-        //calculate the direction where it can be created
+        List<Creature> creatures = new ArrayList<Creature>();
+        Creature creature = new Creature();
+        creature.typeOfCreature("red");
+        creatures.add(creature.build());
+
+        Texture texture = new Texture(BitmapHelper.rescale(BitmapHelper.convert(mActivity.getResources().getDrawable(R.drawable.ic_launcher)), 64, 64));
+        TextureManager.getInstance().addTexture("texture", texture);
+
+
+        cam = this.getCamera();
+        cam.moveCamera(Camera.CAMERA_MOVEOUT, 50);
+        cam.lookAt(creature.getTransformedCenter());
+
+        SimpleVector sv = new SimpleVector();
+        sv.set(creature.getTransformedCenter());
+        sv.y -= 100;
+        sv.z -= 100;
+        creature.setPosition(sv);
+        MemoryHelper.compact();
     }
 
 }

@@ -12,5 +12,10 @@ public class VuforiaInit {
 
     public void load3DRenders(){}
 
+    public void createMonsters(){
+        Creature creature = new Creature();
+
+    }
+
     //TODO create windows where 3d renders also make it androids create destroy pause etc.
 }
