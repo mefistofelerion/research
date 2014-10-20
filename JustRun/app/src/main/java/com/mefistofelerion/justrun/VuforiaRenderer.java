@@ -44,7 +44,7 @@ public class VuforiaRenderer extends Activity {
         creature.typeOfCreature("red");
         creatures.add(creature.build());
 
-        Texture texture = new Texture(BitmapHelper.rescale(BitmapHelper.convert(mActivity.getResources().getDrawable(R.drawable.ic_launcher)), 64, 64));
+        Texture texture = new Texture(BitmapHelper.rescale(BitmapHelper.convert(Initial.getResources().getDrawable(R.drawable.ic_launcher)), 64, 64));
         TextureManager.getInstance().addTexture("texture", texture);
 
 
@@ -58,6 +58,21 @@ public class VuforiaRenderer extends Activity {
         sv.z -= 100;
         creature.setPosition(sv);
         MemoryHelper.compact();
+    }
+
+    public void onHit(/*context, enemy*/){
+        //which one is hit
+        Creature creature= getHitCreature();
+        //reduce health from creature
+        creature.reduceHealth(10);
+    }
+
+    public Creature getHitCreature(/*int posx int posy*/ ){
+        return null; //will return requested creature depending in where it is positioned
+    }
+
+    public void userGetHit(){//will reduce the health from user when get hit
+        reduceUserHealth(5);
     }
 
 }

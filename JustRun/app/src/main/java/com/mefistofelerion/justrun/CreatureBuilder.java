@@ -5,6 +5,7 @@ package com.mefistofelerion.justrun;
  */
 public abstract class CreatureBuilder {
     String type;
+    float health;
 
    public void typeOfCreature(String type){
        this.type = type;
@@ -13,4 +14,6 @@ public abstract class CreatureBuilder {
     public Creature build(){
         return new Creature();
     }
+
+    public abstract void reduceHealth(int i);
 }
