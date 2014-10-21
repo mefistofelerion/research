@@ -17,10 +17,13 @@ import javax.microedition.khronos.opengles.GL10;
  */
 public class VuforiaRenderer extends Activity {
 
+    private Player player;
+    private  Creature creature;
 
     public VuforiaRenderer(Context context){
         //get camera from device
         //create matrix where it will be view
+        player = new Player();
     }
 
     public void onSurfaceCreated(GL10 gl10, EGLConfig config){
@@ -62,9 +65,9 @@ public class VuforiaRenderer extends Activity {
 
     public void onHit(/*context, enemy*/){
         //which one is hit
-        Creature creature= getHitCreature();
+        creature= getHitCreature();
         //reduce health from creature
-        creature.reduceHealth(10);
+        creature.getHit();
     }
 
     public Creature getHitCreature(/*int posx int posy*/ ){
@@ -72,7 +75,7 @@ public class VuforiaRenderer extends Activity {
     }
 
     public void userGetHit(){//will reduce the health from user when get hit
-        reduceUserHealth(5);
+        player.getHit();
     }
 
 }

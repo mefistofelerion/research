@@ -15,5 +15,5 @@ public abstract class CreatureBuilder {
         return new Creature();
     }
 
-    public abstract void reduceHealth(int i);
+
 }

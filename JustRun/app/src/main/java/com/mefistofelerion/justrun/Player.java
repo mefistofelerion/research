@@ -3,24 +3,9 @@ package com.mefistofelerion.justrun;
 import java.util.Random;
 
 /**
- * Created by Ivan on 10/14/14.
+ * Created by Ivan on 10/20/14.
  */
-public class Creature extends CreatureBuilder {
-
-    public Creature() {
-        this.health = FULL_HEALTH;
-        this.dead = false;
-    }
-
-    public void typeOfCreature(String type) {
-        //set type of creature and give its form
-    }
-
-    public Creature getNewCreature() {
-        return build();
-    }
-
-
+public class Player {
     private static final int FULL_HEALTH = 100;
     private static final int CRITICAL_HIT = 10;
     private static final int HIT = 5;
@@ -28,17 +13,22 @@ public class Creature extends CreatureBuilder {
     private boolean dead;
     private int health;
 
+    public Player(){
+        this.health = FULL_HEALTH;
+        this.dead = false;
+    }
 
-    public void getHit() {
+    public void getHit(){
         Random rand = new Random();
         int n = rand.nextInt(1);
         boolean isCritical = n == 1 ? true : false;
-        if (isCritical) {
-            if (this.health > 0)
+        if(isCritical){
+            if(this.health>0)
                 this.health -= CRITICAL_HIT;
             else
                 this.dead = true;
-        } else {
+        }
+        else{
             this.health -= HIT;
         }
     }
