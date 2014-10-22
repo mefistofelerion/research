@@ -43,7 +43,7 @@ public class Initial extends Activity {
     //private TextView stepValueView;
     private SharedPreferences savedValues;
     private Editor saveInfo;
-    private LoggerHelper logger;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,6 @@ public class Initial extends Activity {
 
         }
         saveInfo = savedValues.edit();
-        logger = new LoggerHelper();//to initialize logger
     }
 
     @Override
@@ -99,11 +98,11 @@ public class Initial extends Activity {
             dataToSend.put("calories",savedValues.getFloat("calories",0));
             sendData(dataToSend);
         }catch(FileNotFoundException ex){
-            logger.error("error while opening file for writing data");
+            LoggerHelper.error("error while opening file for writing data");
         }catch(IOException ex){
-            logger.error("error while writing the file");
+            LoggerHelper.error("error while writing the file");
         }catch(JSONException ex){
-            logger.error("error while creating json string");
+            LoggerHelper.error("error while creating json string");
         }
     }
 
@@ -114,12 +113,12 @@ public class Initial extends Activity {
         ResponseHandler<String> responseHandler = new BasicResponseHandler();
         String response = client.execute(httpget, responseHandler);
         if(response == "ok"){
-            logger.debug("DB wrote correctly the data");
+            LoggerHelper.debug("DB wrote correctly the data");
         }
         }catch(ClientProtocolException ex){
-            logger.error("error while executing request to the server");
+            LoggerHelper.error("error while executing request to the server");
         }catch(IOException ex){
-            logger.error("error while executing request to the server");
+            LoggerHelper.error("error while executing request to the server");
         }
         Toast.makeText(getApplicationContext(),"Information sent!",Toast.LENGTH_SHORT).show();
     }
@@ -176,7 +175,7 @@ public class Initial extends Activity {
             switch (msg.what) {
                 case STEPS_MSG:
                     stepValue = (int) msg.arg1;
-                    logger.debug(String.valueOf(stepValue));
+                    LoggerHelper.debug(String.valueOf(stepValue));
                     saveInfo.putInt("steps", stepValue);
                     break;
                 case PACE_MSG:
@@ -184,7 +183,7 @@ public class Initial extends Activity {
                     if (paceValue <= 0) {
                         saveInfo.putInt("pace", paceValue);
                     } else {
-                        logger.info("no pace detected");
+                        LoggerHelper.info("no pace detected");
                     }
                     break;
                 case DISTANCE_MSG:
@@ -193,7 +192,7 @@ public class Initial extends Activity {
                         saveInfo.putFloat("distance", distanceValue);
                     }
                     else {
-                        logger.info("there's no distance yet");
+                        LoggerHelper.info("there's no distance yet");
                     }
                     break;
                 case SPEED_MSG:
@@ -202,7 +201,7 @@ public class Initial extends Activity {
                        saveInfo.putFloat("speed", speedValue);
                     }
                     else {
-                        logger.info("there's no speed yet");
+                        LoggerHelper.info("there's no speed yet");
                     }
                     break;
                 case CALORIES_MSG:
@@ -211,7 +210,7 @@ public class Initial extends Activity {
                         saveInfo.putFloat("calories", caloriesValue);
                     }
                     else {
-                       logger.info("there's no calories to show yet ");
+                       LoggerHelper.info("there's no calories to show yet ");
                     }
                     break;
                 default:

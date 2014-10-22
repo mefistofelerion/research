@@ -1,7 +1,6 @@
 package com.mefistofelerion.justrun;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import android.util.Log;
 
 /**
  * will be used to collect data to be send later
@@ -9,18 +8,18 @@ import org.apache.logging.log4j.Logger;
  */
 public class LoggerHelper {
 
-    private final Logger log = LogManager.getLogger(LoggerHelper.class);
+    private static final String LOG_TAG = "JustRun";
 
-    public void error(String error){
-        log.error(error);
+    public static void error(String error) {
+        Log.e(LOG_TAG, error);
     }
 
-    public void debug(String msg){
-        log.debug(msg);
+    public static void debug(String msg) {
+        Log.d(LOG_TAG, msg);
     }
 
-    public void info(String msg){
-        log.info(msg);
+    public static void info(String msg) {
+        Log.i(LOG_TAG, msg);
     }
 
 }

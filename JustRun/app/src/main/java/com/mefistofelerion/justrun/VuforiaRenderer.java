@@ -66,8 +66,7 @@ public class VuforiaRenderer extends Activity {
     public void onHit(/*context, enemy*/){
         //which one is hit
         creature= getHitCreature();
-        //reduce health from creature
-        creature.getHit();
+        creatureGetHit();
     }
 
     public Creature getHitCreature(/*int posx int posy*/ ){
@@ -76,6 +75,10 @@ public class VuforiaRenderer extends Activity {
 
     public void userGetHit(){//will reduce the health from user when get hit
         player.getHit();
+    }
+
+    public void creatureGetHit(){//reduce the health of creature hit
+        creature.getHit();
     }
 
 }
