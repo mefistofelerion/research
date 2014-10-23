@@ -2,6 +2,7 @@ package com.mefistofelerion.justrun;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Camera;
+import android.opengl.GLSurfaceView;
 
 import com.qualcomm.QCAR.QCAR;
 
@@ -15,10 +16,15 @@ import javax.microedition.khronos.opengles.GL10;
  * This class will be the one that expects changes on the image.
  * Created by Ivan Guerra on 10/12/14.
  */
-public class VuforiaRenderer extends Activity {
+public class VuforiaRenderer extends Activity implements GLSurfaceView.Renderer{
 
     private Player player;
     private  Creature creature;
+
+    public boolean mIsActive = false;
+
+    private GUIManager mGUIManager;
+
 
     public VuforiaRenderer(Context context){
         //get camera from device
@@ -35,6 +41,11 @@ public class VuforiaRenderer extends Activity {
         //updateRendering(int width, height)
         QCAR.onSurfaceChanged(width,height);
         //create new instance of targetRenderer
+    }
+
+    @Override
+    public void onDrawFrame(GL10 gl) {
+
     }
 
     public void onDestroyedEnemy(){
