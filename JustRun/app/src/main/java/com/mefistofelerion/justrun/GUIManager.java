@@ -14,8 +14,8 @@ import java.lang.ref.WeakReference;
  */
 public class GUIManager {
     private View overlayView;
-    private ToggleButton recoverButton;
-    private Button shotterButton;
+    private Button recoverButton;
+    private Button shooterButton;
 
     static class MyActivityHandler extends Handler
     {
@@ -31,22 +31,22 @@ public class GUIManager {
         public void handleMessage(Message msg)
         {
 
-            Button shotterButton = guiManager.get().shotterButton;
-            ToggleButton recoverButton = guiManager.get().recoverButton;
+            Button shooterButton = guiManager.get().shooterButton;
+            Button recoverButton = guiManager.get().recoverButton;
 
             switch (msg.what)
             {
                 case SHOTTER_BUTTON:
-                    if (shotterButton != null)
+                    if (shooterButton != null)
                     {
-                        shotterButton.setVisibility(View.VISIBLE);
+                        shooterButton.setVisibility(View.VISIBLE);
                     }
                     break;
 
                 case RECOVER_BUTTON:
-                    if (shotterButton != null)
+                    if (shooterButton != null)
                     {
-                        shotterButton.setVisibility(View.GONE);
+                        shooterButton.setVisibility(View.GONE);
                     }
                     break;
 
@@ -100,23 +100,23 @@ public class GUIManager {
             {
                 if (((ToggleButton) v).isChecked())
                 {
-                    nativeStart();
+                   //make a start
                 }
                 else
                 {
-                    nativeReset();
+                    //quit
                 }
             }
         });
 
 
 
-        shooter = (Button) overlayView.findViewById(R.id.shooter_button);
-        shooter.setOnClickListener(new View.OnClickListener()
+        shooterButton = (Button) overlayView.findViewById(R.id.shooter_button);
+        shooterButton.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
-                nativeDelete();
+                //make listener when shoot
             }
         });
 
@@ -126,6 +126,21 @@ public class GUIManager {
     /** Clear the button listeners. */
     public void deinitButtons()
     {
+        if (overlayView == null)
+            return;
+
+        if (shooterButton != null)
+        {
+            shooterButton.setOnClickListener(null);
+            shooterButton = null;
+        }
+
+
+        if (recoverButton != null)
+        {
+            recoverButton.setOnClickListener(null);
+            recoverButton = null;
+        }
 
     }
 

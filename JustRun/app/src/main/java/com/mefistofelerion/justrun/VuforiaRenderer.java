@@ -16,7 +16,7 @@ import javax.microedition.khronos.opengles.GL10;
  * This class will be the one that expects changes on the image.
  * Created by Ivan Guerra on 10/12/14.
  */
-public class VuforiaRenderer extends Activity implements GLSurfaceView.Renderer{
+public class VuforiaRenderer implements GLSurfaceView.Renderer{
 
     private Player player;
     private  Creature creature;
@@ -24,6 +24,17 @@ public class VuforiaRenderer extends Activity implements GLSurfaceView.Renderer{
     public boolean mIsActive = false;
 
     private GUIManager mGUIManager;
+
+    /** Native function for initializing the renderer. */
+    public native void initRendering();
+
+
+    /** Native function to update the renderer. */
+    public native void updateRendering(int width, int height);
+
+
+    /** Native function to store Java environment information for callbacks. */
+    public native void initNativeCallback();
 
 
     public VuforiaRenderer(Context context){
@@ -33,8 +44,14 @@ public class VuforiaRenderer extends Activity implements GLSurfaceView.Renderer{
     }
 
     public void onSurfaceCreated(GL10 gl10, EGLConfig config){
-        //make sure everything is initialized with initRendering()
-        QCAR.onSurfaceCreated();
+        LoggerHelper.debug("GLRenderer::onSurfaceChanged");
+
+        // Call native function to update rendering when render surface
+        // parameters have changed:
+        updateRendering(width, height);
+
+        // Call Vuforia function to handle render surface size changes:
+        QCAR.onSurfaceChanged(width, height);
     }
 
     public void onSurfaceChanged(GL10 gl10, int width, int height){
