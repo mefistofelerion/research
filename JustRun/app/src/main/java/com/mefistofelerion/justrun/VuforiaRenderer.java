@@ -3,6 +3,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Camera;
 import android.opengl.GLSurfaceView;
+import android.os.Message;
 
 import com.qualcomm.QCAR.QCAR;
 
@@ -24,6 +25,7 @@ public class VuforiaRenderer implements GLSurfaceView.Renderer{
     public boolean mIsActive = false;
 
     private GUIManager mGUIManager;
+    private SoundManager mSoundManager;
 
     /** Native function for initializing the renderer. */
     public native void initRendering();
@@ -58,6 +60,15 @@ public class VuforiaRenderer implements GLSurfaceView.Renderer{
         //updateRendering(int width, height)
         QCAR.onSurfaceChanged(width,height);
         //create new instance of targetRenderer
+    }
+
+    /** The native render function. */
+    public native void renderFrame();
+
+    /** Called from native to play a sound effect. */
+    public void playSound(int soundIndex, float volume)
+    {
+        mSoundManager.playSound(soundIndex, volume);
     }
 
     @Override
@@ -107,6 +118,47 @@ public class VuforiaRenderer implements GLSurfaceView.Renderer{
 
     public void creatureGetHit(){//reduce the health of creature hit
         creature.getHit();
+    }
+
+    /** Called from native to disable the start button. */
+    public void disableStartButton()
+    {
+        Message message = new Message();
+        message.what = GUIManager.DISABLE_START_BUTTON;
+        mGUIManager.sendThreadSafeGUIMessage(message);
+    }
+
+
+    /** Called from native to toggle the start button. */
+    public void toggleStartButton()
+    {
+        Message message = new Message();
+        message.what = GUIManager.TOGGLE_START_BUTTON;
+        mGUIManager.sendThreadSafeGUIMessage(message);
+    }
+
+
+    /** Called from native to display a message. */
+    public void displayMessage(String text)
+    {
+        Message message = new Message();
+        message.what = GUIManager.DISPLAY_INFO_TOAST;
+        message.obj = text;
+        mGUIManager.sendThreadSafeGUIMessage(message);
+    }
+
+
+    /** Setter for the sound manager. */
+    public void setSoundManager(SoundManager soundManager)
+    {
+        mSoundManager = soundManager;
+    }
+
+
+    /** Setter for the GUI manager. */
+    public void setGUIManager(GUIManager guiManager)
+    {
+        mGUIManager = guiManager;
     }
 
 }
