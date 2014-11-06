@@ -5,6 +5,8 @@ package com.mefistofelerion.justrun; /**
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -72,6 +74,45 @@ public class Texture {
             LoggerHelper.info(e.getMessage());
             return null;
         }
+
+        public static Texture loadTextureFromIntBuffer(int[] data, int width,
+        int height)
+        {
+            // Convert:
+            int numPixels = width * height;
+            byte[] dataBytes = new byte[numPixels * 4];
+
+            for (int p = 0; p < numPixels; ++p)
+            {
+                int colour = data[p];
+                dataBytes[p * 4] = (byte) (colour >>> 16); // R
+                dataBytes[p * 4 + 1] = (byte) (colour >>> 8); // G
+                dataBytes[p * 4 + 2] = (byte) colour; // B
+                dataBytes[p * 4 + 3] = (byte) (colour >>> 24); // A
+            }
+
+            Texture texture = new Texture();
+            texture.mWidth = width;
+            texture.mHeight = height;
+            texture.mChannels = 4;
+
+            texture.mData = ByteBuffer.allocateDirect(dataBytes.length).order(
+                    ByteOrder.nativeOrder());
+            int rowSize = texture.mWidth * texture.mChannels;
+            for (int r = 0; r < texture.mHeight; r++)
+                texture.mData.put(dataBytes, rowSize * (texture.mHeight - 1 - r),
+                        rowSize);
+
+            texture.mData.rewind();
+
+            // Cleans variables
+            dataBytes = null;
+            data = null;
+
+            texture.mSuccess = true;
+            return texture;
+        }
+
     }
 }
 
