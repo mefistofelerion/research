@@ -33,11 +33,9 @@ public class Texture {
 
     /** Factory function to load a texture from the APK. */
     public static Texture loadTextureFromApk(String fileName,
-                                             AssetManager assets)
-    {
+                                             AssetManager assets) {
         InputStream inputStream = null;
-        try
-        {
+        try {
             inputStream = assets.open(fileName, AssetManager.ACCESS_BUFFER);
 
             BufferedInputStream bufferedStream =
@@ -51,30 +49,29 @@ public class Texture {
             // Convert:
             byte[] dataBytes = new byte[bitMap.getWidth() *
                     bitMap.getHeight() * 4];
-            for (int p = 0; p < bitMap.getWidth() * bitMap.getHeight(); ++p)
-            {
+            for (int p = 0; p < bitMap.getWidth() * bitMap.getHeight(); ++p) {
                 int colour = data[p];
-                dataBytes[p * 4]        = (byte)(colour >>> 16);    // R
-                dataBytes[p * 4 + 1]    = (byte)(colour >>> 8);     // G
-                dataBytes[p * 4 + 2]    = (byte) colour;            // B
-                dataBytes[p * 4 + 3]    = (byte)(colour >>> 24);    // A
+                dataBytes[p * 4] = (byte) (colour >>> 16);    // R
+                dataBytes[p * 4 + 1] = (byte) (colour >>> 8);     // G
+                dataBytes[p * 4 + 2] = (byte) colour;            // B
+                dataBytes[p * 4 + 3] = (byte) (colour >>> 24);    // A
             }
 
             Texture texture = new Texture();
-            texture.mWidth      = bitMap.getWidth();
-            texture.mHeight     = bitMap.getHeight();
-            texture.mChannels   = 4;
-            texture.mData       = dataBytes;
+            texture.mWidth = bitMap.getWidth();
+            texture.mHeight = bitMap.getHeight();
+            texture.mChannels = 4;
+            texture.mData = dataBytes;
 
             return texture;
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             LoggerHelper.error("Failed to log texture '" + fileName + "' from APK");
             LoggerHelper.info(e.getMessage());
             return null;
         }
+    }
 
+    /** Load the texture that is in the buffer*/
         public static Texture loadTextureFromIntBuffer(int[] data, int width,
         int height)
         {
