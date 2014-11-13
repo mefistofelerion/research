@@ -1,5 +1,6 @@
 package com.mefistofelerion.justrun;
 
+import java.nio.Buffer;
 import java.util.Random;
 
 /**
@@ -7,9 +8,21 @@ import java.util.Random;
  */
 public class Creature extends CreatureBuilder {
 
+    private Buffer mVertBuff;
+    private Buffer mTexCoordBuff;
+    private Buffer mNormBuff;
+    private Buffer mIndBuff;
+
+    private int indicesNumber = 0;
+    private int verticesNumber = 0;
+
     public Creature() {
         this.health = FULL_HEALTH;
         this.dead = false;
+        setVerts();
+        setTexCoords();
+        setNorms();
+        setIndices();
     }
 
     public void typeOfCreature(String type) {
@@ -59,4 +72,78 @@ public class Creature extends CreatureBuilder {
     public void setDead(boolean dead) {
         this.dead = dead;
     }
+
+
+
+        private void setVerts()
+        {
+            double[] CREATURE_VERTS = {
+            mVertBuff = fillBuffer(CREATURE_VERTS);
+            verticesNumber = CREATURE_VERTS.length / 3;
+        }
+
+
+        private void setTexCoords()
+        {
+            double[] CREATURE_TEX_COORDS = { };
+            mTexCoordBuff = fillBuffer(CREATURE_TEX_COORDS);
+
+        }
+
+
+        private void setNorms()
+        {
+            double[] CREATURE_NORMS = { };
+            mNormBuff = fillBuffer(CREATURE_NORMS);
+        }
+
+
+        private void setIndices()
+        {
+            short[] CREATURE_INDICES = {  };
+            mIndBuff = fillBuffer(CREATURE_INDICES);
+            indicesNumber = CREATURE_INDICES.length;
+        }
+
+
+        public int getNumObjectIndex()
+        {
+            return indicesNumber;
+        }
+
+
+        @Override
+        public int getNumObjectVertex()
+        {
+            return verticesNumber;
+        }
+
+
+        @Override
+        public Buffer getBuffer(BUFFER_TYPE bufferType)
+        {
+            Buffer result = null;
+            switch (bufferType)
+            {
+                case BUFFER_TYPE_VERTEX:
+                    result = mVertBuff;
+                    break;
+                case BUFFER_TYPE_TEXTURE_COORD:
+                    result = mTexCoordBuff;
+                    break;
+                case BUFFER_TYPE_NORMALS:
+                    result = mNormBuff;
+                    break;
+                case BUFFER_TYPE_INDICES:
+                    result = mIndBuff;
+                default:
+                    break;
+
+            }
+
+            return result;
+        }
+
+
+
 }
