@@ -158,7 +158,7 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
 
         // Hide the Loading Dialog
         mActivity.loadingDialogHandler
-                .sendEmptyMessage(LoadingDialogHandler.HIDE_LOADING_DIALOG);
+                .sendEmptyMessage(DialogHandler.HIDE_LOADING_DIALOG);
 
     }
 
